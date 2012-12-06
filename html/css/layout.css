@@ -1,0 +1,165 @@
+body{
+    font-size: 10px;
+    font-family: 'Maven Pro', sans-serif;
+    background: url(../imagens/fundo-body.gif);
+}
+
+header{
+    height: 265px;
+    padding: 16px 0 0 0;
+    background: url(../imagens/fundo-topo.gif) repeat-x;
+}
+
+header h1{
+    width: 475px;
+    height: 131px;
+    text-indent: -99999px;
+    margin: 0 auto 50px auto;
+    background: url(../imagens/logo-rp.png) no-repeat 0 0;
+}
+
+header form{
+    width: 850px;
+    margin: 0 auto 0 auto;
+}
+
+header form input{
+    height: 62px;
+    width: 757px;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px;
+    font-size: 2.4em;
+    color: #7B858D;
+    border: 1px solid #D6D8D9;
+}
+
+header form button{
+    width: 71px;
+    height: 64px;
+    border: none;
+    font-size: 0;
+    float: right;
+    background: url(../imagens/bot-busca.png) no-repeat 0 0;
+}
+
+/*
+a.ajuda{
+    display: inline-block;
+    text-indent: -99999px;
+    width: 35px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../imagens/icone-ajuda.png) no-repeat 0 0;
+}
+*/
+
+p.ajuda{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../imagens/icone-ajuda.png) no-repeat 0 8px;
+    font-size: 1.5em;
+    line-height: 150%;
+    color: #7B858D;
+    width: 480px;
+    padding: 12px 0 0 45px;
+}
+
+.titulofiltros{
+    font-size: 1.8em;
+    color: #444;
+    font-weight: 700;
+    position: absolute;
+    right: 355px;
+    top: 45px;
+}
+
+.filtros{
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 45px;
+}
+
+.filtros li{
+    float: left;
+}
+
+.filtros a{
+    font-size: 1.8em;
+    color: #444;
+    display: block;
+    height: 22px;
+    text-decoration: none;
+    margin: 0 0 0 18px;
+}
+
+.filtros a:hover, .filtros a:focus{
+    text-decoration: underline;
+}
+
+.numeros{
+    border-top: 1px solid #CCC;
+    font-size: 1.6em;
+    line-height: 180%;
+    color: #7B858D;
+    margin: 10px 0 40px 0;
+    padding: 7px 0 0 0;
+}
+
+.resultados li{
+    margin: 0 0 45px 0;
+}
+
+.resultados li p:first-child{
+    font-size: 1.6em;
+}
+
+.resultados p{
+    font-size: 1.8em;
+    color: #7B858D;
+    line-height: 150%;
+}
+
+.resultados h3{
+    margin: 0 0 8px 0;
+}
+
+.resultados h3 a{
+    font-size: 2.4em;
+}
+
+.resultados a{
+    color: #003FFF;
+    text-decoration: none;
+}
+
+.resultados a:hover, .resultados a:focus{
+    text-decoration: underline;
+}
+
+.empresas{
+    background: url(../imagens/icone-empresas.png) no-repeat 0 0;
+    padding: 0 0 0 27px;
+}
+
+.problemas{
+    background: url(../imagens/icone-problemas.png) no-repeat 0 0;
+    padding: 0 0 0 27px;
+}
+
+.assuntos{
+    background: url(../imagens/icone-assuntos.png) no-repeat 0 0;
+    padding: 0 0 0 27px;
+}
+
+.centro{
+    width: 960px;
+    margin: 50px auto 0 auto;
+    padding: 65px 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
