@@ -141,6 +141,10 @@ p.ajuda{
     text-decoration: underline;
 }
 
+strong{
+    font-weight: 700;
+}
+
 .empresas{
     background: url(../imagens/icone-empresas.png) no-repeat 0 0;
     padding: 0 0 0 27px;

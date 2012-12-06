@@ -28,7 +28,7 @@
 			<li><a href="#" class="assuntos">Assuntos</a></li>
 			<li><a href="#" class="problemas">Problemas</a></li>
 		</ul>
-		<h2 class="numeros">Sua busca por MIMIMI retornou 10.000 resultados</h2>
+		<h2 class="numeros">Sua busca por <strong>MIMIMI</strong> retornou 10.000 resultados</h2>
 		<ul class="resultados">
 			<li>
 				<p class="empresas">Empresa</p>
