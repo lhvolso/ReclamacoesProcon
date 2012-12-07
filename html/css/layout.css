@@ -112,6 +112,7 @@ p.ajuda{
 
 .resultados li{
     margin: 0 0 45px 0;
+    position: relative;
 }
 
 .resultados li p:first-child{
@@ -122,6 +123,14 @@ p.ajuda{
     font-size: 1.8em;
     color: #7B858D;
     line-height: 150%;
+}
+
+.resultados p.atendimento{
+    position: absolute;
+    font-size: 2.1em;
+    right: 0;
+    top: 18px;
+    color: #D80000;
 }
 
 .resultados h3{
@@ -139,6 +148,43 @@ p.ajuda{
 
 .resultados a:hover, .resultados a:focus{
     text-decoration: underline;
+}
+
+.paginacao{
+    border-top: 1px solid #CCC;
+    text-align: center;
+    padding: 20px 0 100px 0;
+}
+
+.paginacao a{
+    display: inline-block;
+    font-size: 2em;
+    margin: 0 15px;
+    line-height: 50px;
+}
+
+a.anterior{
+    width: 51px;
+    height: 50px;
+    text-indent: -9999px;
+    margin: 0 30px 0 0;
+    background: url(../imagens/anterior-off.png) no-repeat 0 0;
+}
+
+a.proxima{
+    width: 51px;
+    height: 50px;
+    text-indent: -9999px; 
+    margin: 0 0 0 30px;  
+    background: url(../imagens/proxima-off.png) no-repeat 0 0;
+}
+
+.anterior[href]{
+    background: url(../imagens/anterior-on.png) no-repeat 0 0;
+}
+
+.proxima[href]{
+    background: url(../imagens/proxima-on.png) no-repeat 0 0;
 }
 
 strong{

@@ -34,53 +34,72 @@
 				<p class="empresas">Empresa</p>
 				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="empresas">Empresa</p>
 				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="empresas">Empresa</p>
 				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
 				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
+				<p class="atendimento">25% atendidas</p>
 			</li>
 		</ul>
+		<div class="paginacao">
+			<a class="anterior">Anterior</a>
+			<a>01</a>
+			<a href="#">02</a>
+			<a href="#">03</a>
+			<a href="#">04</a>
+			<a href="#">05</a>
+			<a class="proxima" href="#">Próxima</a>
+		</div>
 	</section>
 </body>
 </html>
