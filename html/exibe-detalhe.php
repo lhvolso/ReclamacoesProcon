@@ -22,7 +22,7 @@
 	</header>
 	<article class="centro interna">
 		<h1>Reclamações da Empresa: <strong>SUBMARINO/SHOPTIME/AMERICANAS.COM</strong></h1>
-		<p>A empresa <strong>SUBMARINO/SHOPTIME/AMERICANAS.COM</strong> possui um número total de 4 000 reclamações fundamentas, dentre elas, 25% não foram atendidas, totalizando 1000 reclamações sem atendimento.</p>
+		<p>A empresa <strong>SUBMARINO/SHOPTIME/AMERICANAS.COM</strong> possui um número total de <strong>4 000 reclamações fundamentas</strong>, dentre elas, <strong>25% não foram atendidas</strong>, totalizando <strong>1000 reclamações sem atendimento</strong>.</p>
 		<h2>Os principais problemas reportados são:</h2>
 		<ul>
 			<li>Demora ou não entrega de produto (489 reclamações)</li>
