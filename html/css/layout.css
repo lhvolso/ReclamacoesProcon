@@ -10,7 +10,8 @@ header{
     background: url(../imagens/fundo-topo.gif) repeat-x;
 }
 
-header h1{
+header h1, header a.logo{
+    display: block;
     width: 475px;
     height: 131px;
     text-indent: -99999px;
@@ -212,4 +213,52 @@ strong{
     padding: 65px 0 0 0;
     position: relative;
     overflow: hidden;
+}
+
+.interna{
+    padding: 15px 0 0 0;
+}
+
+.interna h1{
+    font-size: 2.4em;
+    margin: 0 0 45px 0;
+    color: #333
+}
+
+.interna h1 strong{
+    font-size: 1.5em;
+    display: block;
+}
+
+.interna p{
+    font-size: 1.8em;
+    line-height: 180%;
+    color: #666;
+}
+
+.interna h2{
+    font-size: 2.4em;
+    font-weight: 700;
+    margin: 40px 0 25px 0;
+    color: #333;
+}
+
+.interna li{
+    font-size: 1.8em;
+    font-style: italic;
+    line-height: 180%;
+    color: #666;
+}
+
+.interna a.voltar{
+    display: inline-block;
+    float: right;
+    font-size: 1.8em;
+    color: #003FFF;
+    text-decoration: none;
+    margin: 40px 0;
+}
+
+.interna a.voltar:hover, .interna a.voltar:focus{
+    text-decoration: underline;
 }

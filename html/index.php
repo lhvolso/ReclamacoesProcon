@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/layout.css">
 	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
+	<script src="js/html5shiv.js"></script>
 </head>
 <body>
 	<header>
@@ -32,61 +33,61 @@
 		<ul class="resultados">
 			<li>
 				<p class="empresas">Empresa</p>
-				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
+				<h3><a href="exibe-detalhe.php">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="empresas">Empresa</p>
-				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
+				<h3><a href="exibe-detalhe.php">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="empresas">Empresa</p>
-				<h3><a href="#">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
+				<h3><a href="exibe-detalhe.php">SUBMARINO/SHOPTIME/AMERICANAS.COM</a></h3>
 				<p>5.000 reclamações, em <a href="#">98 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="assuntos">Assunto</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 problemas</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
 			<li>
 				<p class="problemas">Problema</p>
-				<h3><a href="#">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
+				<h3><a href="exibe-detalhe.php">Artigo de Leitura ( Formal, Jornal, Revista, Folheto, Livros, Etc. )</a></h3>
 				<p><a href="#">150 empresas</a> reclamadas com <a href="#">107 assuntos</a> diferentes</p>
 				<p class="atendimento">25% atendidas</p>
 			</li>
