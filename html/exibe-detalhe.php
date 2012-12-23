@@ -25,7 +25,7 @@
 	<article id="article_detalhe" class="centro interna">
 		<h1>Reclamações <span id="titulo1"></span>: <strong class="titulo_empresa"></strong></h1>
 		<p>A empresa <strong class="titulo_empresa"></strong> possui um número total de 
-			<strong><span id="qtde_reclam"></span> reclama(ão)ões fundamentada(s)</strong>, e, 
+			<strong><span id="qtde_reclam"></span> reclamaç(ão)ões fundamentada(s)</strong>, e, 
 			<strong><span id="porc"></span>% não foi(ram) atendida(s)</strong>, totalizando 
 			<strong><span id="qtde_atendidas"></span> reclamaç(ão)ões sem atendimento</strong>.</p>
 		<h2><span id="titulo2"></span> são:</h2>
