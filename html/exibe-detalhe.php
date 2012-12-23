@@ -11,35 +11,45 @@
 	<link rel="stylesheet" href="css/layout.css">
 	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
 	<script src="js/html5shiv.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/scripts.js"></script>
 </head>
 <body>
 	<header>
 		<a href="index.php" class="logo">Página Inicial - Reclamações Procon</a>
 		<form action="#">
-			<input type="text" name="busca" placeholder="Busque aqui a empresa, o assunto ou problema">
-			<button type="submit">Buscar</button>
+			<input type="text" name="busca" id="buscar" placeholder="Busque aqui a empresa, o assunto ou problema">
+			<button id="efetuar_busca_detalhe" type="submit">Buscar</button>
 		</form>
 	</header>
-	<article class="centro interna">
-		<h1>Reclamações da Empresa: <strong>SUBMARINO/SHOPTIME/AMERICANAS.COM</strong></h1>
-		<p>A empresa <strong>SUBMARINO/SHOPTIME/AMERICANAS.COM</strong> possui um número total de <strong>4 000 reclamações fundamentas</strong>, dentre elas, <strong>25% não foram atendidas</strong>, totalizando <strong>1000 reclamações sem atendimento</strong>.</p>
-		<h2>Os principais problemas reportados são:</h2>
-		<ul>
-			<li>Demora ou não entrega de produto (489 reclamações)</li>
-			<li>Problemas com a garantia (299 reclamações)</li>
-			<li>Cobranças indevidas (248 reclamações)</li>
-			<li>Propaganda enganosa (135 reclamações)</li>
-			<li>Problemas de ordem adversos (66 reclamações)</li>
+	<article id="article_detalhe" class="centro interna">
+		<h1>Reclamações <span id="titulo1"></span>: <strong class="titulo_empresa"></strong></h1>
+		<p>A empresa <strong class="titulo_empresa"></strong> possui um número total de 
+			<strong><span id="qtde_reclam"></span> reclama(ão)ões fundamentada(s)</strong>, e, 
+			<strong><span id="porc"></span>% não foi(ram) atendida(s)</strong>, totalizando 
+			<strong><span id="qtde_atendidas"></span> reclamaç(ão)ões sem atendimento</strong>.</p>
+		<h2><span id="titulo2"></span> são:</h2>
+		<ul id="problemas_listagem">
 		</ul>
-		<h2>Assuntos mais reclamados:</h2>
-		<ul>
-			<li>Aparelhos Celular (666 reclamações)</li>
-			<li>Informática (222 reclamações)</li>
-			<li>Móveis (12 reclamações)</li>
-			<li>Utilidades Domésticas (9 reclamações)</li>
-			<li>Eletrônicos (3 reclamações)</li>
+		<h2><span id="titulo3"></span>:</h2>
+		<ul id="assuntos_listagem">
 		</ul>
 		<a href="javascript:history.go(-1)" class="voltar">&laquo; Voltar</a>
 	</article>
+	<section id="detalhe_section" class="centro">
+		<!--<a href="#" class="ajuda">Ajuda</a>-->
+		<p class="ajuda">As reclamações são divididas em Nome da Empresa, Assunto e Descrição do Problema, utilize os filtros à direita para refinar a busca.</p>
+		<p class="titulofiltros">Filtros:</p>
+		<ul class="filtros">
+			<li><a href="#" class="empresas">Empresas</a></li>
+			<li><a href="#" class="assuntos">Assuntos</a></li>
+			<li><a href="#" class="problemas">Problemas</a></li>
+		</ul>
+		<h2 class="numeros">Sua busca por <strong id="termo_pesquisado">digite a palavra</strong> retornou <span id="qtde_resultados">0</span> resultados</h2>
+		<ul class="resultados">
+		</ul>
+		<div class="paginacao">
+		</div>
+	</section>
 </body>
 </html>

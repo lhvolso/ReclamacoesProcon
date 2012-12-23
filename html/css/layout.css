@@ -155,6 +155,7 @@ p.ajuda{
     border-top: 1px solid #CCC;
     text-align: center;
     padding: 20px 0 100px 0;
+    display:none;
 }
 
 .paginacao a{
@@ -261,4 +262,8 @@ strong{
 
 .interna a.voltar:hover, .interna a.voltar:focus{
     text-decoration: underline;
+}
+#detalhe_section
+{
+    display: none;
 }
