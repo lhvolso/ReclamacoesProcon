@@ -1,0 +1,57 @@
+.divisao:before{
+	border: none;
+	background: url(../imagens/detalhe-filtros-ie.jpg) no-repeat center bottom;
+}
+canvas{
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+}
+table.circular{
+	position: absolute;
+	width: 100%;
+	top: 230px
+}
+.idade tr{
+	position: relative;
+	padding: 0;
+	width: 25%;
+	margin: 0;
+	background-image: url(../imagens/fundo-grafico-vertical.png); 
+	background-repeat: no-repeat;
+	background-position: center 20px;
+	background-size: 70% 100%;
+}
+.idade td.valor{ 
+	display: block; 
+	position: absolute;
+	left: 0; 
+	top: 0; 
+	height: 102px;
+	width: 96px;
+	padding: 0 0 0 0;
+}
+.idade td.variavel{
+	display: block; 
+	position: absolute; 
+	left: 0; 
+	top: 102px;
+	width: 100%;
+	background-color: #FFF;
+}
+.horizontal tr{
+	border-left: none;
+	border-bottom: 10px solid #FFF;
+}
+.horizontal tr:first-child{
+	border-left: none;
+}
+.horizontal tr:first-child td:first-child{
+    border-left: 5px solid #D77B56;
+    
+}
+.horizontal tr td:first-child{
+    background-color: #EEEEEE;
+    border-left: 5px solid #BE5F63;
+    padding: 0 0 0 5px;
+}
