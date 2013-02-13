@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/$ reclamacoes.php?empresa=$1 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1&atendidas=$2 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ reclamacoes.php?empresa=$1&atendidas=$2 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1&atendidas=$2&sexo=$3 [QSA]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ reclamacoes.php?empresa=$1&atendidas=$2&sexo=$3 [QSA]
