@@ -1,4 +1,11 @@
 RewriteEngine On
+#Redirecionamento de Buscas
+RewriteCond %{QUERY_STRING} !=""
+RewriteCond %{QUERY_STRING} ^pesquisa=([^/]*)$ [NC]
+RewriteRule ^(.*)$ /ReclamacoesProcon/html/pesquisa/%1? [R]
+RewriteRule ^pesquisa/([^/]*)$ /ReclamacoesProcon/html/resultados-busca.php?empresa=$1
+RewriteRule ^pesquisa/([^/]*)/([^/]*)$ /ReclamacoesProcon/html/resultados-busca.php?empresa=$1&pagina=$2
+ErrorDocument 404 /ReclamacoesProcon/html/pagina-nao-encontrada.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1 [QSA]
@@ -7,3 +14,8 @@ RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1&atend
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ reclamacoes.php?empresa=$1&atendidas=$2 [QSA]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ reclamacoes.php?empresa=$1&atendidas=$2&sexo=$3 [QSA]
 RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ reclamacoes.php?empresa=$1&atendidas=$2&sexo=$3 [QSA]
+<filesMatch ".(js|php|css)$">
+SetOutputFilter DEFLATE
+</filesMatch>
+#ExpiresActive On
+#ExpiresDefault "access plus 10 years"

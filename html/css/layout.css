@@ -1,3 +1,49 @@
+/************* CSS RESET *************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/**************************************/
+
 body{
 	font-family: "Maven Pro", sans-serif;
 	color: #797979;
@@ -13,6 +59,16 @@ table{
 	font-size: 1.8em;
 }
 
+caption{
+	display: block;
+	width: 87%;
+	text-align: left;
+	font-size: 0.9em;
+	font-style: italic;
+	color: #AAA;
+	line-height: 130%;
+}
+
 .wrap{
 	width: 1200px;
 	margin: 0 auto;
@@ -20,22 +76,32 @@ table{
 }
 
 header.topo{
-	background-color: #3D5B99;
+	background-color: #EEE;
 	overflow: hidden;
 }
 
 header a.logo{
-	font-size: 3em;
-	color: #CED8E1;
-	text-decoration: none;
-	line-height: 45px;
+	width: 201px;
+	height: 45px;
 	float: left;
+	background-image: url(../imagens/logo-principal-menor.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	text-indent: -9999px;
 }
 
 .buscainterna{
 	float: right;
-	padding: 6px 0 0 0;
+	margin: 6px 55px 0 0;
 	position: relative;
+	width: 645px;
+	height: 23px;
+	background-color: #FFF;
+	border-radius: 8px;
+	padding: 3px;
+	overflow: hidden;
+	border: 2px solid #69A6C6;
 }
 
 .buscainterna label{
@@ -47,35 +113,51 @@ header a.logo{
 
 .buscainterna input{
 	border: none;
-	height: 27px;
-	border-radius: 8px;
+	padding: 0;
+	width: 545px;
+	height: 23px;
 	font-size: 1.6em;
 	color: #797979;
-	padding: 2px 5px;
-	width: 700px;
+	background-color: #FFF;
+	float: left;
 }
 
 .buscainterna button{
 	border: none;
-	font-size: 1.6em;
+	display: block;
+	float: right;
+	font-size: 1.5em;
 	line-height: 21px;
 	border-radius: 5px;
 	background-color: #3D5B99;
 	color: #FFF;
-	padding: 1px 5px;
-	position: absolute;
-	top: 9px;
-	right: 4px;
+	padding: 0;
+	width: 80px
 }
 
 a.busca{
 	display: none;
 }
 
+header a.ajuda{
+	display: block;
+	width: 36px;
+	height: 45px;
+	background-image: url(../imagens/fundo-ajuda-reclamacao.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 33px 33px;
+	text-indent: -9999px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
 h1{
-	font-size: 5em;
+	font-size: 4.5em;
 	color: #85B93B;
 	padding: 20px 0;
+	width: 70%
 }
 
 h1 small{
@@ -103,7 +185,7 @@ h1 small{
     border-bottom: none;
 }
 
-.fundoheader p{
+.fundoheader h2{
 	font-size: 3em;
 	text-align: center;
 	height: 60px;
@@ -184,15 +266,20 @@ li.divisao:before{
 h2.nota{
 	position: absolute;
 	right: 0;
-	top: 15px;
+	top: 5px;
 	width: 390px;
-	height: 80px;
+	height: 98px;
 	font-size: 2em;
 	color: #3D5B99;
 	background-repeat: no-repeat;
 	background-position: right bottom;
 	text-align: right;
 	background-size: auto 53px;
+}
+
+h2.nota a{
+	color: #3D5B99;
+	text-decoration: none;
 }
 
 h2.a{
@@ -215,30 +302,38 @@ h2.e{
 	background-image: url(../imagens/fundo-nota-e.jpg);	
 }
 
-h2.nota span{
+h2.nota span.valor{
 	display: block;
 	height: 53px;
-	text-align: right;
-	padding: 7px 10px 0 0;
+	text-align: center;
+	padding: 28px 0 0 338px;
 	font-size: 2.5em;
-	font-family: 'Courier';
+	font-weight: bold;
 	color: #FF1C25;
-	line-height: 56px;
+	line-height: 90%;
 }
 
-.infografico section h2{
+h2.nota span.media{
+	display: block;
+	font-size: 0.8em;
+	position: absolute;
+	top: 25px;
+	right: 0;
+}
+
+.infografico section h3{
 	background-color: #8DC63F;
 	color: #FFF;
 	width: 100%;
 	text-align: center;
 	font-size: 2.8em;
 	padding: 4px 0 7px 0;
-	margin: 0 0 42px 0;
+	margin: 0 0 26px 0;
 	position: relative;
 	height: 28px;
 }
 
-.infografico section h2:after{
+.infografico section h3:after{
 	content: '';
 	display: block;
 	margin: 7px auto 0 auto;
@@ -251,7 +346,7 @@ h2.nota span{
 
 .boxmenor{
 	width: 32.166667%;
-	height: 308px;
+	height: 355px;
 	float: left;
 }
 
@@ -268,7 +363,7 @@ section.margembox{
 	display: block;
 	text-indent: -999999px;
 	width: 50%;
-	height: 269px;
+	height: 316px;
 	position: absolute;
 	bottom: 0px;
 }
@@ -277,8 +372,9 @@ section.margembox{
 	right: 0;
 }
 
-.idade h2{
-	margin: 0 0 70px 0;
+.idade caption{
+	width: 100%;
+	margin: 0 0 30px 0;
 }
 
 .idade tbody{
@@ -308,7 +404,7 @@ section.margembox{
 .idade td.valor{
 	background-image: url(../imagens/fundo-grafico-vertical.png); 
 	background-repeat: no-repeat;
-	background-position: center 71px;
+	background-position: center 122px;
 	background-size: 75% 100%;
 }
 
@@ -321,6 +417,11 @@ section.margembox{
 .circular{
 	width: 87%;
 	margin: 0 auto;
+}
+
+.circular caption{
+	position: absolute;
+	top: 65px;
 }
 
 .circular tbody{
@@ -373,20 +474,24 @@ section.margembox{
 a.mas{
 	background-image: url(../imagens/icone-masculino.png);
 	background-repeat: no-repeat;
-	background-position: 26.943005181347% 127px;
+	background-position: 26.943005181347% 160px;
 	background-size: 30px 62px;
 }
 
 a.fem{
 	background-image: url(../imagens/icone-feminino.png);
 	background-repeat: no-repeat;
-	background-position: 72.84465020576132% 127px;
+	background-position: 72.84465020576132% 160px;
 	background-size: 30px 62px;
 }
 
-.horizontal tbody, .horizontal tr{
+.horizontal tbody, .horizontal tr, .horizontal caption{
 	width: 100%;
 	overflow: hidden;
+}
+
+.horizontal caption{
+	margin: 0 0 20px 0;
 }
 
 .horizontal tr{
@@ -403,7 +508,7 @@ a.fem{
 .horizontal tr td:first-child{
 	width: 77.4%;
 	float: left;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	background-image: url(../imagens/fundo-grafico-horizontal.png);
 	background-repeat: no-repeat;
 	background-position: -238px 0;
@@ -444,18 +549,25 @@ a.fem{
 
 canvas{
 	display: block;
-	margin: 0 auto;
+	margin: 90px auto 0 auto;
 }
 
 @media screen and (max-width:1199px) {
 	.wrap{
 		width: 980px;
 	}
-	.buscainterna input{
-		width: 580px;
+	.buscainterna{
+		width: 594px;
 	}
-	.fundoheader p{
+	.buscainterna input{
+		width: 500px;
+	}
+	.fundoheader h2{
 		background-position: 29% center;
+	}
+	caption{
+		line-height: 115%;
+		font-size: 0.85em;
 	}
 }
 
@@ -469,7 +581,7 @@ canvas{
 }
 
 @media screen and (max-width:950px) {
-	.infografico section h2{
+	.infografico section h3{
 		font-size: 2em;
 		line-height: 28px;
 	}
@@ -477,10 +589,10 @@ canvas{
 		width: 96%;
 	}
 	a.mas{
-	    background-position: 21.943% 127px;
+	    background-position: 21.943% 160px;
 	}
 	a.fem {
-	    background-position: 77.8447% 127px;
+	    background-position: 77.8447% 160px;
 	}
 	.horizontal td.valor{
 		font-size: 1.3em;
@@ -488,10 +600,13 @@ canvas{
 }
 
 @media screen and (max-width:910px) {
-	.buscainterna input{
-		width: 480px;
+	.buscainterna{
+		width: 494px;
 	}
-	.fundoheader p {
+	.buscainterna input{
+		width: 400px;
+	}
+	.fundoheader h2 {
 	    background-position: 25% center;
 	}
 	.idade tr {
@@ -516,18 +631,46 @@ canvas{
 }
 
 @media screen and (max-width:800px) {
+	.buscainterna{
+		width: 294px;
+	}
 	.buscainterna input{
-		width: 280px;
+		width: 200px;
 	}
 	h1{
+		width: 100%;
 		text-align: center;
 		padding: 20px 0;
 	}
 	h2.nota{
-		display: none;
+		position: relative;
+		margin: 10px auto 15px auto;
+		text-align: center;
+		height: 95px
 	}
-	.fundoheader p {
+	h2.nota span.valor{
+		padding: 25px 0 0 338px;
+	}
+	h2.nota span.media{
+		width: 100%;
+	}
+	.fundoheader h2 {
 	    background-position: 20% center;
+	}
+	.boxmenor{
+		height: 370px;
+	}
+	.circular{
+		padding: 15px 0 0 0;
+	}
+	caption{
+		width: 100%;
+	}
+	a.mas{
+	    background-position: 11.943% 160px;
+	}
+	a.fem {
+	    background-position: 87.8447% 160px;
 	}
 }
 
@@ -540,28 +683,31 @@ canvas{
 		height: 40px;
 	}
 	header a.logo{
-		font-size: 2.2em;
-		line-height: 40px;
+		width: 179px;
+		height: 40px;
 		position: absolute;
 		left: 5px;
 	}
 	.buscainterna{
-		padding: 6px 0 0 0;
-		width: 100%;
+		display: none;
 		float: none;
-		top: -34px
+		width: 96%;
+		margin: 3px auto 0 auto;
+		padding: 3px 1%;
+		position: relative;
+		z-index: 2;
 	}
 	.buscainterna input{
-		position: absolute;
-		z-index: 2;
-		height: 24px;
-		width: 96%;
-		padding: 2px 2%;
+		width: 73%;
 	}
 	.buscainterna button{
-		top: 6px;
-		right: 3px;
-		z-index: 3;
+		width: 23%;
+	}
+	header a.ajuda{
+		width: 30px;
+		height: 40px;
+		background-size: 24px 24px;
+		background-image: url(../imagens/icone-ajuda-mob.png);
 	}
 	a.busca{
 		display: block;
@@ -570,7 +716,7 @@ canvas{
 		text-indent: -99999px;
 		position: absolute;
 		z-index: 1;
-		right: 0;
+		right: 30px;
 		top: 0;
 		background-image: url(../imagens/icone-busca.png);
 		background-repeat: no-repeat;
@@ -586,7 +732,7 @@ canvas{
 		font-size: 0.7em;
 		line-height: 160%;
 	}
-	.fundoheader p{
+	.fundoheader h2{
 		text-align: right;
 		font-size: 2.4em;
 		background-size: 30px 31px;
@@ -625,14 +771,16 @@ canvas{
 	}
 	.infografico section{
 	    border-bottom: none;
+	    margin:0 0 38px 0;
+	    height: auto;
 	}
-	.infografico section h2{
+	.infografico section h3{
 		font-size: 2.8em;
 		margin: 0 0 30px 0;
 	}
 	.boxmenor{
 		width: 100%;
-		height: 252px;
+		height: 320px;
 		float: none;
 	}
 	.boxmaior{
@@ -644,10 +792,16 @@ canvas{
 	}
 	.circular{
 		width: 92%;
-		margin: -25px auto 0 auto;
+		margin: -5px auto 0 auto;
+	}
+	.circular caption {
+	    width: auto;
+	}
+	.idade caption {
+		width: auto;
 	}
 	.linkdir, .linkesq{
-		height: 213px;
+		height: 305px;
 	}
 	a.mas{
 		background-position: 26.943% 81px;
@@ -671,9 +825,28 @@ canvas{
 	}
 }
 
+@media screen and (max-width: 390px){
+	h2.nota{
+		width: 320px;
+		background-size: auto 43px;
+		height: 80px;
+	}
+	h2.nota span.valor{
+		padding: 17px 0 0 277px;
+		height: 43px;
+		font-size: 2.3em;
+	}
+}
+
 @media screen and (-webkit-min-device-pixel-ratio : 1.5), screen and (min-device-pixel-ratio : 1.5) {
+	header a.logo{
+		background-image: url(../imagens/logo-principal-menor@2x.png);
+	}
 	a.busca{
 		background-image: url(../imagens/icone-busca@2x.png);
+	}
+	header a.ajuda{
+		background-image: url(../imagens/icone-ajuda-mob@2x.png);
 	}
 	h2.a{
 		background-image: url(../imagens/fundo-nota-a@2x.jpg);
@@ -702,7 +875,7 @@ canvas{
 	.horizontal tr td:first-child{
 		background-image: url(../imagens/fundo-grafico-horizontal@2x.png);
 	}
-	.fundoheader p{
+	.fundoheader h2{
 		background-image: url(../imagens/fundo-reclamacoes@2x.png);
 	}
 	.filtros a{

@@ -1,3 +1,49 @@
+/************* CSS RESET *************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/**************************************/
+
 body{
 	font-family: "Maven Pro", sans-serif;
 	font-size: 10px;
@@ -14,13 +60,20 @@ header{
 	padding: 0 0 50px 0;	
 }
 
-h1{
+header h1, header a.logo{
+	display: block;
 	background-image: url(../imagens/logo-principal.png);
 	background-repeat: no-repeat;
 	background-position: 0 5px;
 	background-size: 384px 86px;
 	height: 96px;
 	text-indent: -9999px;
+}
+
+h1 a{
+	display: block;
+	width: 384px;
+	height: 96px;
 }
 
 header p{
@@ -36,7 +89,7 @@ header p{
 header a.ajuda{
 	display: block;
 	width: 50px;
-	height: 50px;
+	height: 96px;
 	background-image: url(../imagens/fundo-ajuda.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -44,7 +97,6 @@ header a.ajuda{
 	position: absolute;
 	right: 0;
 	top: 0;
-	height: 96px;
 	text-indent: -9999px;
 }
 
@@ -79,6 +131,8 @@ input{
 	text-align: center;
 	background-color: #FFF;
 	padding: 0;
+	position: relative;
+	z-index: 1;
 }
 
 button{
@@ -91,6 +145,8 @@ button{
 	font-size: 2.4em;
 	border-radius: 7px;
 	padding: 0 15px;
+	position: relative;
+	z-index: 2;
 }
 
 div.conteudo{
@@ -103,6 +159,12 @@ h2{
 	font-size: 3em;
 	color: #FBB100;
 	margin: 0 0 20px 0;
+}
+
+h3{
+	font-size: 2em;
+	color: #FBB100;
+	margin: 20px 0;
 }
 
 section{
@@ -119,6 +181,15 @@ section p{
 	font-size: 1.8em;
 	line-height: 140%;
 	color: #777777;
+	margin: 0 0 15px 0;
+}
+
+section p strong{
+	font-style: italic;
+}
+
+section p a{
+	color: #3C5C9A;
 }
 
 footer{
@@ -131,7 +202,7 @@ footer{
 ol li{
 	position: relative;
 	border-bottom: 1px dashed #FCB817;
-	padding: 20px 0 22px 0;
+	padding: 20px 31px 22px 0;
 	margin: 0 0 22px 0;
 }
 
@@ -156,6 +227,19 @@ ol h2{
 	font-size: 4em;
 	color: #3C5C9A;
 	margin: 0 0 7px 0;
+}
+
+ol h2.naoencontrado{
+	color: #777;
+	font-size: 3.2em;
+}
+
+ol h2.naoencontrado strong{
+	display: block;
+	font-style: italic;
+	line-height: 120%;
+	font-size: 1.4em;
+	color: #3C5C9A;
 }
 
 ol p{
@@ -190,6 +274,11 @@ ol p.reclamacoes{
 	border-radius: 5px;
 }
 
+.paginacao a span{
+	display: inline-block;
+	text-indent: -9999px;
+}
+
 .paginacao li.anterior a{
 	margin: 0 20px 0 0;
 	width: auto;
@@ -210,6 +299,78 @@ ol p.reclamacoes{
 .paginacao a.ativo{
 	color: #FFF;
 	background-color: #3C5C9A;
+}
+
+.textocentro{
+	text-align: center;
+}
+
+article.ajuda{
+	padding: 35px 0 0 0;
+	width: 960px;
+	margin: 0 auto;
+}
+
+article.ajuda section{
+	float: none;
+	width: auto;
+}
+
+article.ajuda h1{
+	background: none;
+	font-size: 4.5em;
+	color: #8DC63F;
+	text-align: center;
+	margin: 0 0 25px 0;
+}
+
+article.ajuda nav{
+	margin: 0 0 35px 0;
+}
+
+article.ajuda nav a{
+	font-size: 1.2em;
+	color: #39599E;
+}
+
+article.ajuda th, article.ajuda td, article.ajuda li{
+	font-size: 1.8em;
+	line-height: 140%;
+	color: #777777;
+	margin: 0 0 15px 0;
+	text-align: left;
+}
+
+article.ajuda tr{
+	border-bottom: 1px dashed #CCC;
+	padding: 7px 0;
+}
+
+article.ajuda th{
+	font-weight: bold;
+}
+
+article.ajuda tr th:first-child, article.ajuda tr td:first-child{
+	width: 40px;
+	padding: 0 40px 0 0;
+}
+
+article.ajuda tr td:first-child{
+	text-align: center;
+}
+
+article.ajuda td{
+	padding: 10px 40px 0 0;	
+}
+
+article.ajuda li{
+	font-style: italic;
+	padding: 0 0 0 12px;
+	font-size: 1.65em;
+}
+
+article.ajuda li:before{
+	content: '- ';
 }
 
 @media screen and (max-width:1199px) {
@@ -262,6 +423,10 @@ ol p.reclamacoes{
 	section p{
 		font-size: 1.8em;
 	}
+
+	article.ajuda{
+		width: 98%;
+	}
 }
 
 @media screen and (max-width: 640px){
@@ -271,11 +436,16 @@ ol p.reclamacoes{
 		padding: 0 0 40px 0;
 	}
 
-	h1{
+	header h1{
 		width: 233px;
 		height: 70px;
 		background-position: center center;
 		background-size: 223px 50px;
+	}
+
+	h1 a{
+		width: 233px;
+		height: 70px;
 	}
 
 	header a.ajuda{
@@ -331,6 +501,10 @@ ol p.reclamacoes{
 		color: #777777;
 	}
 
+	ol li{
+		padding: 20px 0 22px 0;
+	}
+
 	ol li a:hover:after, ol li a:focus:after{
 		display: none;
 	}
@@ -355,13 +529,19 @@ ol p.reclamacoes{
 		background-image: url(../imagens/paginacao-proxima.png);
 		margin: 0 0 0 7px;
 	}
+
+	article.ajuda h1{
+		width: auto;
+		height: auto;
+		font-size: 3.6em;
+	}
 }
 
 @media screen and (-webkit-min-device-pixel-ratio : 1.5), (min-device-pixel-ratio : 1.5) {
 	header a.ajuda{
 		background-image: url(../imagens/fundo-ajuda@2x.png);
 	}
-	h1{
+	header h1{
 		background-image: url(../imagens/logo-principal@2x.png);
 	}
 	button{
@@ -388,16 +568,3 @@ ol p.reclamacoes{
 		background-image: none;
 	}	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
