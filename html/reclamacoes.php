@@ -86,8 +86,8 @@ mysql_close($conexao);
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
-	<link rel="stylesheet" href="<?php echo $raiz; ?>css/layout-min.css">
-	<!--[if lt IE 10]><link rel="stylesheet" href="<?php echo $raiz; ?>css/ie-min.css"><![endif]-->
+	<link rel="stylesheet" href="<?php echo $raiz; ?>css/layout.css">
+	<!--[if lt IE 10]><link rel="stylesheet" href="<?php echo $raiz; ?>css/ie.css"><![endif]-->
 	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/html5.js"></script><![endif]-->
 	<script src="<?php echo $raiz; ?>js/jquery.js"></script>
