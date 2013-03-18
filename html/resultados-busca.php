@@ -24,7 +24,7 @@ $conexao = conectarBanco();
 	<meta name="keywords" content="procon, pesquisa, reclamações">
 	<meta name="description" content="Resultados da pesquisa por: <?php echo ucwords($_GET['empresa']); ?>">
 	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="noindex, follow">
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">

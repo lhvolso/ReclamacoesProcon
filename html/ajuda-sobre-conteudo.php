@@ -6,7 +6,7 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="Página não encontrada.">
 	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="index, follow">
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
@@ -67,10 +67,10 @@
 
 		<section>
 			<h2 id="oprojeto">O projeto Reclamações Procon</h2>
-			<p>Para que conseguíssemos atingir nosso objetivo de um site acessível desenvolvemos nossos códigos seguindo as recomendações da  <a href="www.w3c.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>, assim como realizar as boas práticas de (CONTINUAR)</p>
+			<p>Para que conseguíssemos atingir nosso objetivo de um site acessível desenvolvemos nossos códigos seguindo as recomendações do  <a href="www.w3c.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>, assim como realizar as boas práticas de de estruturação de documentos de hipertexto.</p>
 
 			<h3 id="tecnologias">Tecnologias utilizadas</h3>
-			<p>Nos gráficos de pizza e circulares foram utilizadas a tecnologia de <strong>canvas</strong>, obetendo assim flexibilidade, dinâmicidade em sua composição, proporcionando uma boa visualização com pouca transferência de dados, e baixa demanda de processamento.</p>
+			<p>Nos gráficos de pizza e circulares foram utilizadas a tecnologia de <strong>canvas</strong>, obtendo assim flexibilidade, dinâmicidade em sua composição, proporcionando uma boa visualização com pouca transferência de dados, e baixa demanda de processamento.</p>
 
 			<p>Neste projeto foi utilizada a metodologia "<a href="http://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/">Mobile First</a>", visando facilitar a experiência de uso nos mais diversos dispositivos móveis, notebooks e/ou desktops.</p>
 			<p>Utilizamos várias tecnologias da <a href="http://www.soyuz.com.br/blog/open-web-platform/">Open Web Plataform:</a></p>
@@ -97,7 +97,7 @@
 			<p>Foi utilizado um modelo de <strong>infográficos</strong> para as páginas com as informações sobre as empresas para proporcionar um fácil entendimento dos dados. Os gráficos e as informações foram construídas de forma a ser acessível com bom entendimento mesmo utilizando tecnologias assistivas como leitores de telas.</p>
 
 			<h3 id="bomba">Entendendo a bomba</h3>
-			<p>A bomba foi criada para melhor expressar o dado de tempo médio demorado pelas empresas para resolver uma determinada reclamação classificando em uma escala de notas iniciando com a letra A” para menos demorado até a letra “E” para muito demorado.</p>
+			<p>A bomba foi criada para melhor expressar o dado de tempo médio demorado pelas empresas para resolver uma determinada reclamação classificando em uma escala de notas iniciando com a letra "A" para menos demorado até a letra "E" para muito demorado.</p>
 			<table>
 				<tr>
 					<th>Nota</th>

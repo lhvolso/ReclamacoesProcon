@@ -6,7 +6,7 @@
 	<meta name="keywords" content="procon, reclamações, empresas, problemas, assuntos, dados abertos">
 	<meta name="description" content="Serviço de busca e visualização intuitiva de dados de reclamações fundamentadas do PROCON">
 	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="index, follow">
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">

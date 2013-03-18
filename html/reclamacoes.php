@@ -82,7 +82,7 @@ mysql_close($conexao);
 	<meta name="keywords" content="<?php echo ucwords(utf8_encode($nome)); ?>, reclamação, procon, problemas, assuntos, idade, sexo">
 	<meta name="description" content="<?php echo ucwords(utf8_encode($nome)); ?> possui um total de <?php echo number_format($total, 0, ',', '.'); ?> reclamações no PROCON, veja mais detalhes sobre elas!">
 	<meta name="revisit-after" content="7 days">
-	<meta name="robots" content="noindex">
+	<meta name="robots" content="index, follow">
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
