@@ -3,19 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ajuda Sobre o Conteúdo - Reclamações Procon</title>
-	<meta name="keywords" content="">
-	<meta name="description" content="Página não encontrada.">
+	<meta name="keywords" content="procon, reclamações, empresas, problemas, assuntos, dados abertos">
+	<meta name="description" content="Aqui você encontra informações importantes sobre o projeto assim como detalhes sobre o seu funcionamento.">
 	<meta name="revisit-after" content="7 days">
 	<meta name="robots" content="index, follow">
 	<meta name="author" content="Group VOID">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
 	<link rel="stylesheet" href="css/layout-inicio.css">
-	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script type="text/javascript" src="js/html5.js"></script><![endif]-->
-	<script src="<?php echo $raiz; ?>js/jquery.js"></script>
-	<!--[if lt IE 9]><script type="text/javascript" src="js/mediaqueries-min.js"></script><![endif]-->
+	<link href="http://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/html5.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="js/mediaqueries-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
 	<script src="js/ios-bug-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-16951438-4']);
@@ -26,22 +32,32 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	</script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 </head>
-<body class="resultados">
-	<header>
+<body>
+	<header class="margem" role="banner">
 		<div class="wrap">
-			<a class="logo" href="/">Reclamações Procon</a>
+			<nav role="navigation">
+				<ul>
+					<li><a href="#conteudo" class="salto" accesskey="1">Saltar para o conteúdo [1]</a></li>
+					<li><a href="/" class="logo" accesskey="2">Voltar à página inicial [2]</a></li>
+					<li><a href="/ajuda-sobre-conteudo.php" class="ajuda" accesskey="3">Ajuda sobre o conteúdo [3]</a></li>
+				</ul>
+			</nav>
+			<h1>Reclamações Procon</h1>
 		</div>
 	</header>
-	<form action="/" class="wrap">
-		<label for="busca">Pesquise o nome da empresa</label>
-		<input type="text" name="pesquisa" id="busca" placeholder="PESQUISE O NOME DA EMPRESA" autocomplete="off" required>
-		<button type="submit">BUSCAR</button>
+	<form action="/" class="wrap" role="search" method="get">
+		<div>
+			<label for="pesquisa">Pesquise o nome da empresa</label>
+			<input type="text" name="pesquisa" id="pesquisa" accesskey="4" required>
+			<button type="submit">BUSCAR</button>
+		</div>
 	</form>
-	<article class="conteudo ajuda">
-		<h1>Ajuda sobre o conteúdo</h1>
+	<article class="conteudo ajuda" role="main">
+		<h1 id="conteudo">Ajuda sobre o conteúdo</h1>
 		<nav>
-			<ul>
+			<ul id="navegacao">
 				<li><a href="#quemsomos">Quem somos</a></li>
 				<li><a href="#oprojeto">O projeto Reclamações Procon</a></li>
 				<li><a href="#tecnologias">Tecnologias utilizadas</a></li>
@@ -56,7 +72,7 @@
 		</nav>
 		<section>
 			<h2 id="quemsomos">Quem somos</h2>
-			<p>Somos um grupo de estudantes, programadores e designers, do curso da Especialização em Padrões Web da Universidade Tecnológica Federal do Paraná, campus Londrina.</p>
+			<p>Somos um grupo de estudantes, programadores e <span lang="en">designers</span>, do curso da Especialização em Padrões Web da Universidade Tecnológica Federal do Paraná, campus Londrina.</p>
 
 			<p>Nos unimos com o intuito de utilizar os diversos padrões e técnicas estudadas, e assim proporcionar acessibilidade e uma melhor experiência de visualização de dados por nossos usuários, buscando alcançar todo tipo de dispositivo ou tecnologia utilizada por eles.</p>
 
@@ -67,22 +83,22 @@
 
 		<section>
 			<h2 id="oprojeto">O projeto Reclamações Procon</h2>
-			<p>Para que conseguíssemos atingir nosso objetivo de um site acessível desenvolvemos nossos códigos seguindo as recomendações do  <a href="www.w3c.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>, assim como realizar as boas práticas de de estruturação de documentos de hipertexto.</p>
+			<p>Para que conseguíssemos atingir nosso objetivo de um sítio acessível desenvolvemos nossos códigos seguindo as recomendações do  <a href="http://www.w3c.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>, assim como realizar as boas práticas de estruturação de documentos de hipertexto.</p>
 
 			<h3 id="tecnologias">Tecnologias utilizadas</h3>
-			<p>Nos gráficos de pizza e circulares foram utilizadas a tecnologia de <strong>canvas</strong>, obtendo assim flexibilidade, dinâmicidade em sua composição, proporcionando uma boa visualização com pouca transferência de dados, e baixa demanda de processamento.</p>
+			<p>Nos gráficos de pizza e circulares foram utilizadas a tecnologia de <strong lang="en">canvas</strong>, obtendo assim flexibilidade, dinâmicidade em sua composição, proporcionando uma boa visualização com pouca transferência de dados, e baixa demanda de processamento.</p>
 
-			<p>Neste projeto foi utilizada a metodologia "<a href="http://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/">Mobile First</a>", visando facilitar a experiência de uso nos mais diversos dispositivos móveis, notebooks e/ou desktops.</p>
-			<p>Utilizamos várias tecnologias da <a href="http://www.soyuz.com.br/blog/open-web-platform/">Open Web Plataform:</a></p>
+			<p>Neste projeto foi utilizada a metodologia "<a lang="en" href="http://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/">Mobile First</a>", visando facilitar a experiência de uso nos mais diversos dispositivos móveis, <span lang="en">notebooks</span> e/ou <span lang="en">desktops</span>.</p>
+			<p>Utilizamos várias tecnologias da <a lang="en" href="http://www.soyuz.com.br/blog/open-web-platform/">Open Web Plataform:</a></p>
 			<ul>
-				<li>HTML5: Padrões da W3C (focando-se principalmente nos novos elementos trazendo mais semântica ao conteúdo, como: header, footer, article, section, nav, etc.);</li>
+				<li>HTML5: Padrões da W3C (focando-se principalmente nos novos elementos trazendo mais semântica ao conteúdo, como: <span lang="en">header</span>, <span lang="en">footer</span>, <span lang="en">article</span>, <span lang="en">section</span>, <span lang="en">nav</span>, etc.);</li>
 
 				<li>Padrões do grupo WCAG para acessibilidade;</li>
 
-				<li>CSS3: Pseudo-elementos, Media-queries, e novas propriedades como: border-radius, box-shadow, font-face, transform, etc;</li>
-				<li>Canvas para os gráficos circulares (utilizando javascript nativo com uso de polyfill para Internet Explorer versão 8);</li>
+				<li>CSS3: Pseudo-elementos, <span lang="en">Media-queries</span>, e novas propriedades como: <span lang="en">border-radius</span>, <span lang="en">box-shadow</span>, <span lang="en">font-face</span>, <span lang="en">transform</span>, etc;</li>
+				<li><span lang="en">Canvas</span> para os gráficos circulares (utilizando <span lang="en">javascript</span> nativo com uso de <span lang="en">polyfill</span> para <span lang="en">Internet Explorer</span> versão 8);</li>
 				<li>PHP versão 5.4</li>
-				<li>Javascript e jQuery</li>
+				<li><span lang="en">Javascript</span> e <span lang="en">jQuery</span></li>
 			</ul>
 
 			<h3 id="interface">Interface</h3>
@@ -99,6 +115,7 @@
 			<h3 id="bomba">Entendendo a bomba</h3>
 			<p>A bomba foi criada para melhor expressar o dado de tempo médio demorado pelas empresas para resolver uma determinada reclamação classificando em uma escala de notas iniciando com a letra "A" para menos demorado até a letra "E" para muito demorado.</p>
 			<table>
+				<caption>Explicação das notas de tempo de resposta.</caption>
 				<tr>
 					<th>Nota</th>
 					<th>Média de Dias</th>
@@ -128,9 +145,9 @@
 
 		<section>
 			<h2 id="oquesaodados"> O que são Dados Abertos</h2>
-			<p>Segundo a <a href="http://opendefinition.org/">definição da Open Knowledge Foundation (em inglês)</a>:</p>
+			<p>Segundo a <a href="http://opendefinition.org/">definição da <span lang="en">Open Knowledge Foundation</span> (em inglês)</a>:</p>
 			<p><strong>"Dados são abertos quando qualquer pessoa pode livremente usá-los, reutilizá-los e redistribuí-los, estando sujeito a, no máximo, a exigência de creditar a sua autoria e compartilhar pela mesma licença."</strong></p>
-			<p>Os dados abertos também são pautados pelas <a href="http://eaves.ca/2009/09/30/three-law-of-open-government-data/">Três Leis de Dados Abertos Governamentais (em inglês)</a> criadas pelo especialista em políticas públicas e ativista dos dados abertos <a href="http://eaves.ca/about/">David Eaves</a> e os <a href="http://www.opengovdata.org/home/8principles">Oito Princípios de Dados Abertos Governamentais (em inglês)</a> criados por um grupo de trabalho de 30 pessoas da Califórnia. O grupo também afirmou que a conformidade com esses princípios precisa ser verificável e uma pessoa deve ser designada como contato responsável pelos dados.</p>
+			<p>Os dados abertos também são pautados pelas <a href="http://eaves.ca/2009/09/30/three-law-of-open-government-data/">Três Leis de Dados Abertos Governamentais (em inglês)</a> criadas pelo especialista em políticas públicas e <a href="http://eaves.ca/about/">ativista dos dados abertos <span lang="en">David Eaves</span></a> e os <a href="http://www.opengovdata.org/home/8principles">Oito Princípios de Dados Abertos Governamentais (em inglês)</a> criados por um grupo de trabalho de 30 pessoas da Califórnia. O grupo também afirmou que a conformidade com esses princípios precisa ser verificável e uma pessoa deve ser designada como contato responsável pelos dados.</p>
 			<p>As Três Leis e Oito Princípios dos Dados Abertos Governamentais traduzidas você encontra no <a href="http://dados.gov.br/dados-abertos">Portal Brasileiro de Dados Abertos</a></p>
 		</section>
 
@@ -145,8 +162,9 @@
 
 			<p>A reclamação se configura como <strong>fundamentada</strong> quando houver argumentos que comprovem a existência do consumidor e do fornecedor, a relação de consumo entre eles, sua verossimilhança e que não tenha sido prontamente solucionada pelo fornecedor.</p>
 
-			<p>Definição completa: <a href="http://dados.gov.br/dataset/cadastro-nacional-de-reclamacoes-fundamentadas-procons-sindec/resource/bb9e832c-7f0b-4a97-a1b6-1de679d4a7d4"> F.A.Q. do Cadastro Nacional de Reclamações Fundamentadas;</a></p>
+			<p>Definição completa: <a href="http://dados.gov.br/dataset/cadastro-nacional-de-reclamacoes-fundamentadas-procons-sindec/resource/bb9e832c-7f0b-4a97-a1b6-1de679d4a7d4"> Perguntas Freqüentes do Cadastro Nacional de Reclamações Fundamentadas;</a></p>
 		</section>
+		<a class="voltartopo" href="#" accesskey="0">Voltar ao topo [0]</a>
 	</article>
 </body>
 </html>

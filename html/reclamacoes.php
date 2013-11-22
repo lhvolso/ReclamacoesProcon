@@ -88,12 +88,23 @@ mysql_close($conexao);
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
 	<link rel="stylesheet" href="<?php echo $raiz; ?>css/layout.css">
 	<!--[if lt IE 10]><link rel="stylesheet" href="<?php echo $raiz; ?>css/ie.css"><![endif]-->
-	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/html5.js"></script><![endif]-->
-	<script src="<?php echo $raiz; ?>js/jquery.js"></script>
-	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/excanvas-min.js"></script><![endif]-->
-	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/mediaqueries-min.js"></script><![endif]-->
-	<script src="<?php echo $raiz; ?>js/js-functions-min.js"></script>
+	<link href="http://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/html5.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/jquery.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/excanvas-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/mediaqueries-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/js-functions-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-16951438-4']);
@@ -104,25 +115,31 @@ mysql_close($conexao);
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	</script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 </head>
 <body onload='<?php echo "carregarGrafico(false, [" . $nao_atendidas . ", " . $atendidas . "], \"grafico_atendimento\"), carregarGrafico(true, [" . $feminino . ", " . $masculino . "], \"grafico_sexo\");"; ?>'>
-	<header class="topo">
+	<header class="topo" role="banner">
 		<div class="wrap">
-			<a href="/" class="logo">Reclamações Procon</a>
-			<form action="<?php echo $raiz; ?>" class="buscainterna">
-				<label for="busca">Pesquise o nome da empresa</label>
-				<input type="text" id="busca" name="pesquisa" autocomplete="off" required>
-				<button type="submit">BUSCAR</button>
+			<nav role="navigation">
+				<ul>
+					<li><a href="#conteudo" class="salto" accesskey="1">Saltar para o conteúdo [1]</a></li>
+					<li><a href="/" class="logo" accesskey="2">Voltar à página inicial [2]</a></li>
+					<li><a href="/ajuda-sobre-conteudo.php" class="ajuda" accesskey="3">Ajuda sobre o conteúdo [3]</a></li>
+				</ul>
+			</nav>
+			<form action="<?php echo $raiz; ?>" class="buscainterna" role="search" method="get">
+				<div>
+					<label for="pesquisa">Pesquise o nome da empresa</label>
+					<input type="text" id="pesquisa" name="pesquisa" accesskey="4" required>
+					<button type="submit">BUSCAR</button>
+				</div>
 			</form>
-			<a class="busca">Exibir Busca</a>
-			<a href="/ajuda-sobre-conteudo.php" class="ajuda">Ajuda sobre o conteúdo</a>
 		</div>
 	</header>
-	<article class="infografico">
+	<article class="infografico" role="main">
 		<header>
 			<div class="wrap">
-				<h1><small>Reclamações da Empresa:</small><?php echo ucwords(utf8_encode($nome)); ?></h1>
-
+				<h1 id="conteudo"><span>Reclamações da Empresa:</span> <?php echo ucwords(utf8_encode($nome)); ?></h1>
 				<?php
 				$conexao = conectarBanco();
 
@@ -161,28 +178,21 @@ mysql_close($conexao);
 					$uri = str_replace($filtroEstado, '', $uri);
 				}
 				?>
-				<h2 class="nota <?php echo strtolower($notaTempo); ?>">
-					<a href="/ajuda-sobre-conteudo.php#bomba">
-						Nota do Tempo de resposta: 
-						<span class="valor"><?php echo $notaTempo; ?></span>
-						<span class="media">(média de <?php echo floor($tempo); ?> dias)</span>
-					</a>
-				</h2>
 			</div>
 			<div class="fundoheader">
 				<?php
 				if($filtroEstado != '' OR $filtroSexo != ''){ $class = 'divisao'; } else {$class = ''; }
-				echo '<h2 class="wrap '.$class.'">'.number_format($total, 0, ',', '.').' reclamações</h2>';
+				echo '<h2 class="wrap '.$class.'"><span>Total de </span>'.number_format($total, 0, ',', '').' reclamações</h2>';
 				if($filtroEstado != '' OR $filtroSexo != ''){
 					echo '<ul class="filtros">';
 						if(isset($_GET['sexo'])){ $class = 'divisao'; } else { $class = ''; }
 						if($_GET['atendidas'] != 'feminino' AND $_GET['atendidas'] != 'masculino'){
-							echo '<li class="wrap '.$class.'">Filtrando somente '.substr(str_replace('nao-atendidas', 'não atendidas', $filtroEstado), 1).'<a href="'.str_replace($filtroEstado, '', $_SERVER['REQUEST_URI']).'">remover este filtro</a></li>';
+							echo '<li class="wrap '.$class.'"><a title="Clique para remover o filtro" href="'.str_replace($filtroEstado, '', $_SERVER['REQUEST_URI']).'">Filtrando somente '.substr(str_replace('nao-atendidas', 'não atendidas', $filtroEstado), 1).'</a></li>';
 						}else{
-							echo '<li class="wrap">Filtrando somente '.substr($filtroSexo, 1).'<a href="'.str_replace($filtroSexo, '', $_SERVER['REQUEST_URI']).'">remover este filtro</a></li>';
+							echo '<li class="wrap"><a title="Clique para remover o filtro" href="'.str_replace($filtroSexo, '', $_SERVER['REQUEST_URI']).'">Filtrando somente '.substr($filtroSexo, 1).'</a></li>';
 						}
 						if(isset($_GET['sexo'])){
-							echo '<li class="wrap">Filtrando somente '.substr($filtroSexo, 1).'<a href="'.str_replace($filtroSexo, '', $_SERVER['REQUEST_URI']).'">remover este filtro</a></li>';
+							echo '<li class="wrap"><a title="Clique para remover o filtro" href="'.str_replace($filtroSexo, '', $_SERVER['REQUEST_URI']).'">Filtrando somente '.substr($filtroSexo, 1).'</a></li>';
 						}
 					echo '</ul>';
 				}
@@ -190,72 +200,115 @@ mysql_close($conexao);
 			</div>
 		</header>
 		<div class="wrap">
-			<section class="boxmenor">
+			<section class="nota <?php echo strtolower($notaTempo); ?>">
+				<h3>Nota do Tempo de resposta:</h3>
+				<p>
+					<span class="valor"><span>Nota: </span><?php echo $notaTempo; ?></span>
+					<span class="media">(média de <?php echo floor($tempo); ?> dias)</span>
+				</p>
+			</section>
+			<section class="boxpadrao boxmenor">
 				<h3>estado das reclamações</h3>
 				<canvas id="grafico_atendimento" width="150" height="150"></canvas>
 				<table class="circular atendimento">
 					<caption>Porcentagem de reclamações atendidas e não atendidas. Clique nos números para filtrar.</caption>
+					<thead>
+						<tr>
+							<th id="estado_reclamacoes">Estado da reclamação</th>
+							<th id="porcentagem_estado">Porcentagem</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr>
-							<td class="variavel">atendidas</td>
-							<td class="valor"><?php echo number_format(round($atendidas, 1), $atendidas == 100 || $atendidas == 0 ? 0 : 1, ',', ','); ?>%</td>
+							<td class="variavel" headers="estado_reclamacoes">atendidas</td>
+							<td class="valor" headers="porcentagem_estado">
+								<a title="Filtrar somente atendidas" href="<?php echo $uri.'/atendidas'.$filtroSexo; ?>">
+									<?php echo number_format(round($atendidas, 1), $atendidas == 100 || $atendidas == 0 ? 0 : 1, ',', ','); ?>%
+								</a>
+							</td>
 						</tr>
 						<tr>
-							<td class="variavel">não atendidas</td>
-							<td class="valor"><?php echo number_format(round($nao_atendidas, 1), $nao_atendidas == 100 || $nao_atendidas == 0 ? 0 : 1, ',', ','); ?>%</td>
+							<td class="variavel" headers="estado_reclamacoes">não atendidas</td>
+							<td class="valor" headers="porcentagem_estado">
+								<a title="Filtrar somente não atendidas" href="<?php echo $uri.'/nao-atendidas'.$filtroSexo; ?>">
+									<?php echo number_format(round($nao_atendidas, 1), $nao_atendidas == 100 || $nao_atendidas == 0 ? 0 : 1, ',', ','); ?>%
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
-				<a class="linkesq" href="<?php echo $uri.'/atendidas'.$filtroSexo; ?>">Filtrar somente atendidas</a>
-				<a class="linkdir" href="<?php echo $uri.'/nao-atendidas'.$filtroSexo; ?>">Filtrar somente não atendidas</a>
 			</section>
-			<section class="boxmenor">
-				<h3>sexo</h3>
+			<section class="boxpadrao boxmenor boxsexo">
+				<h3>reclamações por sexo</h3>
 				<canvas id="grafico_sexo" width="150" height="150"></canvas>
 				<table class="circular sexo">
 					<caption>Reclamações de homens e mulheres em porcentagem. Clique nos números para filtrar.</caption>
+					<thead>
+						<tr>
+							<th id="sexo_reclamacoes">Sexo</th>
+							<th id="porcentagem_sexo">Porcentagem</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr>
-							<td class="variavel">masculino</td>
-							<td class="valor"><?php echo number_format(round($masculino, 1), $masculino == 100 || $masculino == 0 ? 0 : 1, ',', ','); ?>%</td>
+							<td class="variavel" headers="sexo_reclamacoes">masculino</td>
+							<td class="valor" headers="porcentagem_sexo">
+								<a title="Filtrar somente masculinas" href="<?php echo $uri.$filtroEstado; ?>/masculino">
+									<?php echo number_format(round($masculino, 1), $masculino == 100 || $masculino == 0 ? 0 : 1, ',', ','); ?>%
+								</a>
+							</td>
 						</tr>
 						<tr>
-							<td class="variavel">feminino</td>
-							<td class="valor"><?php echo number_format(round($feminino, 1), $feminino == 100 || $feminino == 0 ? 0 : 1, ',', ','); ?>%</td>
+							<td class="variavel" headers="sexo_reclamacoes">feminino</td>
+							<td class="valor" headers="porcentagem_sexo">
+								<a title="Filtrar somente femininas" href="<?php echo $uri.$filtroEstado; ?>/feminino">
+									<?php echo number_format(round($feminino, 1), $feminino == 100 || $feminino == 0 ? 0 : 1, ',', ','); ?>%
+								</a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
-				<a class="linkesq mas" href="<?php echo $uri.$filtroEstado; ?>/masculino">Filtrar somente masculino</a>
-				<a class="linkdir fem" href="<?php echo $uri.$filtroEstado; ?>/feminino">Filtrar somente feminino</a>
 			</section>
-			<section class="boxmenor margembox idade">
-				<h3>idade</h3>
+			<section class="boxpadrao boxmenor margembox idade">
+				<h3>reclamações por idade</h3>
 				<table>
 					<caption>Número de reclamações divididas por faixa etária. Algumas reclamações não tem o dado de idade que é indicado como não consta.</caption>
+					<thead>
+						<tr>
+							<th id="numero_idade">Número de reclamações</th>
+							<th id="idade_reclamacoes">Idade</th>
+						</tr>
+					</thead>
 					<tbody id="graficoidade">
 						<tr>
-							<td class="valor"><?php echo $ate_30; ?></td>
-							<td class="variavel">até 30 anos</td>
+							<td class="valor" headers="numero_idade"><?php echo $ate_30; ?></td>
+							<td class="variavel" headers="idade_reclamacoes">até 30 anos</td>
 						</tr>
 						<tr>
-							<td class="valor"><?php echo $mais_31; ?></td>
-							<td class="variavel">31 a 60 anos</td>
+							<td class="valor" headers="numero_idade"><?php echo $mais_31; ?></td>
+							<td class="variavel" headers="idade_reclamacoes">31 a 60 anos</td>
 						</tr>
 						<tr>
-							<td class="valor"><?php echo $mais_60; ?></td>
-							<td class="variavel">mais de 60 anos</td>
+							<td class="valor" headers="numero_idade"><?php echo $mais_60; ?></td>
+							<td class="variavel" headers="idade_reclamacoes">mais de 60 anos</td>
 						</tr>
 						<tr>
-							<td class="valor"><?php echo $nao_consta; ?></td>
-							<td class="variavel">não<br> consta</td>
+							<td class="valor" headers="numero_idade"><?php echo $nao_consta; ?></td>
+							<td class="variavel" headers="idade_reclamacoes">não<br> consta</td>
 						</tr>
 					</tbody>
 				</table>
 			</section>
-			<section class="boxmaior">
+			<section class="boxpadrao boxmaior">
 				<h3>principais problemas</h3>
 				<table class="horizontal">
 					<caption>Principais problemas apontados e o número referente de reclamações, essa lista é padrão do <strong>Procon</strong>.</caption>
+					<thead>
+						<tr>
+							<th id="problema">Problema</th>
+							<th id="reclamacoes_problema">Número de reclamações</th>
+						</tr>
+					</thead>
 					<tbody id="graficoproblema">
 						<?php
 							$conexao = conectarBanco();
@@ -268,8 +321,8 @@ mysql_close($conexao);
 
 							while ($linha = mysql_fetch_assoc($resultado))
 								echo "<tr>
-										<td class='variavel'>" . utf8_encode($linha['DescricaoProblema']) . "</td>
-										<td class='valor'>" . $linha['qtde'] . "</td>
+										<td class='variavel' headers='problema'>" . utf8_encode($linha['DescricaoProblema']) . "</td>
+										<td class='valor' headers='reclamacoes_problema'>" . $linha['qtde'] . "</td>
 									</tr>";
 
 							mysql_free_result($resultado);
@@ -278,10 +331,16 @@ mysql_close($conexao);
 					</tbody>
 				</table>
 			</section>
-			<section class="boxmaior margembox">
+			<section class="boxpadrao boxmaior margembox">
 				<h3>principais assuntos</h3>
 				<table class="horizontal">
 					<caption>Número de reclamações referentes aos principais assuntos reclamados, essa lista é padrão do <strong>Procon</strong>.</caption>
+					<thead>
+						<tr>
+							<th id="assunto">Assunto</th>
+							<th id="reclamacoes_assunto">Número de reclamações</th>
+						</tr>
+					</thead>
 					<tbody id="graficoassunto">
 						<?php
 							$conexao = conectarBanco();
@@ -294,8 +353,8 @@ mysql_close($conexao);
 
 							while ($linha = mysql_fetch_assoc($resultado))
 								echo "<tr>
-										<td class='variavel'>" . utf8_encode($linha['DescricaoAssunto']) . "</td>
-										<td class='valor'>" . $linha['qtde'] . "</td>
+										<td class='variavel' headers='assunto'>" . utf8_encode($linha['DescricaoAssunto']) . "</td>
+										<td class='valor' headers='reclamacoes_assunto'>" . $linha['qtde'] . "</td>
 									</tr>";
 
 							mysql_free_result($resultado);
@@ -304,6 +363,7 @@ mysql_close($conexao);
 					</tbody>
 				</table>
 			</section>
+			<a class="voltartopo" href="#" accesskey="0">Voltar ao topo [0]</a>
 		</div>
 	</article>
 </body>

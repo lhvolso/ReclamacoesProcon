@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteBase /
+RewriteRule ^([a-z,0-9,A-Z,_-]+).html$ /$1.php
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+RewriteRule ^recomendacoes/([^/]*)$ /recomendacoes-do-filme.html?filme=$1
+RewriteRule ^recomendacoes/([^/]*)/pagina-([^/]*)$ /recomendacoes-do-filme.html?filme=$1&pagina=$2
+RewriteRule ^pagina-([^/]*)$ /index.html?pagina=$1
+RewriteRule ^config/$ /403.html
+RewriteRule ^config/config.php$ /403.html
+RewriteRule ^.htaccess$ /403.html

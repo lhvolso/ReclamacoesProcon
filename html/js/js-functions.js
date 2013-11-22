@@ -4,9 +4,9 @@ function carregarGrafico(sexo, dados, id) {
     //Bastará apenas fazermos regras de 3 simples para obter os valores e deverão ser carregados por ajax
     var dadosEmRadianos = converterRadianos(dados);
     if(sexo == true){
-        var cores = ["#FF4D4D", "#76CCF3"];    
+        var cores = ["#EE0000", "#007DB5"];    
     } else {
-        var cores = ["#FCAF17", "#3C5C9A"];
+        var cores = ["#D06B36", "#415781"];
     }
     
     var canvas = document.getElementById(id);
@@ -239,18 +239,23 @@ $('document').ready(function(){
             backgroundPosition: desvioAssunto + ' 0'
         }, 500 );
     }
-
     var largura = $(document).width();
-    console.log(largura);
     if(largura <= 608){
+        $('.buscainterna').after('<a class="busca">Exibir Busca</a>');
         $('.busca').click(function(){
             $('.buscainterna').fadeIn(50);
             $('#busca').focus();
             $('.logo').hide();
         });
-        $('#busca').blur(function(){
+        $('#pesquisa').blur(function(){
             $('.buscainterna').fadeOut(50);
             $('.logo').fadeIn(120);
         });
     }
+    $(window).resize(function() {
+        var largura = $(document).width();
+        if(largura <= 608){
+            $('.buscainterna').after('<a class="busca">Exibir Busca</a>');
+        }
+    });
 });

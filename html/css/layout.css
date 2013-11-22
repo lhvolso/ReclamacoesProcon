@@ -46,8 +46,42 @@ table {
 
 body{
 	font-family: "Maven Pro", sans-serif;
-	color: #797979;
-	font-size: 10px;
+	color: #636161;
+	font-size: 0.625em;
+}
+
+.salto, .voltartopo{
+	display: block;
+	width: 250px;
+	text-align: center;
+	text-indent: -9999px;
+}
+
+.salto{
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	z-index: 99;
+	margin: 0 0 0 -125px;
+	border-radius: 0 0 5px 5px;
+}
+
+.voltartopo{
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+.salto:focus, .voltartopo:focus{
+	text-indent: 0px;
+	font-size: 1.8em;
+	background-color: #415781;
+	text-decoration: none;
+	color: #FFF;
+	padding: 3px 0;
+	border: 1px solid #CCC;
 }
 
 table, tbody, th, td, tr{
@@ -65,19 +99,28 @@ caption{
 	text-align: left;
 	font-size: 0.9em;
 	font-style: italic;
-	color: #AAA;
+	color: #636161;
 	line-height: 130%;
+}
+
+thead{
+	display: none;
+}
+
+.oculto{
+	display: none;
 }
 
 .wrap{
 	width: 1200px;
 	margin: 0 auto;
-	position: relative;
+	/*position: relative;*/
 }
 
 header.topo{
 	background-color: #EEE;
 	overflow: hidden;
+	padding: 10px 0;
 }
 
 header a.logo{
@@ -89,6 +132,10 @@ header a.logo{
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	text-indent: -9999px;
+}
+
+header a.logo:focus{
+	box-shadow: 0 0 10px 4px #415781;
 }
 
 .buscainterna{
@@ -117,7 +164,7 @@ header a.logo{
 	width: 545px;
 	height: 23px;
 	font-size: 1.6em;
-	color: #797979;
+	color: #636161;
 	background-color: #FFF;
 	float: left;
 }
@@ -133,6 +180,10 @@ header a.logo{
 	color: #FFF;
 	padding: 0;
 	width: 80px
+}
+
+.buscainterna button:focus{
+	box-shadow: 0 0 10px 4px #415781;
 }
 
 a.busca{
@@ -153,23 +204,30 @@ header a.ajuda{
 	top: 0;
 }
 
+header a.ajuda:focus{
+	box-shadow: 0 0 10px 4px #415781;
+}
+
 h1{
 	font-size: 4.5em;
-	color: #85B93B;
+	/*color: #85B93B;*/
+	color: #2B8376;
 	padding: 20px 0;
+	height: 68px;
 	width: 70%
 }
 
-h1 small{
+h1 span{
 	display: block;
 	font-size: 0.5em;
 }
 
 .fundoheader{
-	background-color: #3C5C9A;
+	background-color: #415781;
 	color: #FFF;
 	position: relative;
 	margin: 0 0 50px 0;
+	width: 100%;
 }
 
 .fundoheader:after{
@@ -181,7 +239,7 @@ h1 small{
 	width: 0px;
     height: 0px;
     border: solid 25px transparent;
-    border-top: solid 25px #3C5C9A;
+    border-top: solid 25px #415781;
     border-bottom: none;
 }
 
@@ -195,6 +253,12 @@ h1 small{
 	background-position: 400px center;
 	background-size: 40px 41px;
 	position: relative;
+}
+
+.fundoheader h2 span{
+	display: inline-block;
+	text-indent: -9999px;
+	font-size: 0.1em;
 }
 
 .divisao{
@@ -217,9 +281,9 @@ h1 small{
 	display: block;
 	position: absolute;
 	left: 50%;
-	bottom: -11px;
+	bottom: -21px;
 	margin: 0 0 0 -9px;
-	background-color: #3C5C9A;
+	background-color: #415781;
 	width: 18px;
 	height: 18px;
 	border-right: 2px solid #FFF;
@@ -241,12 +305,16 @@ li.divisao:before{
 	text-align: center;
 }
 
+.filtros li:first-child{
+	padding: 12px 0 0 0;
+}
+
 .filtros a{
 	color: #CED8E1;
 	text-decoration: none;
 	background-image: url(../imagens/icone-excluir.png);
 	background-repeat: no-repeat;
-	background-position: 0 22px;
+	background-position: 0 center;
 	background-size: 12px 12px;
 	display: inline-block;
 	padding: 0 0 0 20px;
@@ -257,17 +325,18 @@ li.divisao:before{
 	text-decoration: underline;
 }
 
-.infografico section{
+.infografico .boxmenor, .infografico .boxmaior{
 	margin:0 1.666667% 38px 0;
 	position: relative;
 	border-bottom: 3px solid #76CCF3;
 }
 
-h2.nota{
+.nota{
 	position: absolute;
-	right: 0;
+	left: 50%;
+	margin: 0 0 0 -600px;
 	top: 5px;
-	width: 390px;
+	width: 1200px;
 	height: 98px;
 	font-size: 2em;
 	color: #3D5B99;
@@ -277,43 +346,46 @@ h2.nota{
 	background-size: auto 53px;
 }
 
-h2.nota a{
-	color: #3D5B99;
-	text-decoration: none;
-}
-
-h2.a{
+.a{
 	background-image: url(../imagens/fundo-nota-a.jpg);
 }
 
-h2.b{
+.b{
 	background-image: url(../imagens/fundo-nota-b.jpg);
 }
 
-h2.c{
+.c{
 	background-image: url(../imagens/fundo-nota-c.jpg);
 }
 
-h2.d{
+.d{
 	background-image: url(../imagens/fundo-nota-d.jpg);
 }
 
-h2.e{
+.e{
 	background-image: url(../imagens/fundo-nota-e.jpg);	
 }
 
-h2.nota span.valor{
+.nota .valor{
 	display: block;
 	height: 53px;
 	text-align: center;
-	padding: 28px 0 0 338px;
+	padding: 28px 0 0 1148px;
 	font-size: 2.5em;
 	font-weight: bold;
 	color: #FF1C25;
 	line-height: 90%;
 }
 
-h2.nota span.media{
+.nota .valor span{
+	display: inline-block;
+	font-size: 0.1em;
+	width: 1px;
+	text-indent: -9999px;
+	height: 0;
+}
+
+.nota .media{
 	display: block;
 	font-size: 0.8em;
 	position: absolute;
@@ -321,8 +393,8 @@ h2.nota span.media{
 	right: 0;
 }
 
-.infografico section h3{
-	background-color: #8DC63F;
+.boxpadrao h3{
+	background-color: #2B8376;
 	color: #FFF;
 	width: 100%;
 	text-align: center;
@@ -333,14 +405,14 @@ h2.nota span.media{
 	height: 28px;
 }
 
-.infografico section h3:after{
+.boxpadrao h3:after{
 	content: '';
 	display: block;
 	margin: 7px auto 0 auto;
 	width: 0px;
     height: 0px;
     border: solid 21px transparent;
-    border-top: solid 21px #8DC63F;
+    border-top: solid 21px #2B8376;
     border-bottom: none;
 }
 
@@ -355,21 +427,12 @@ h2.nota span.media{
 	float: left;
 }
 
-section.margembox{
+.infografico{
+	position: relative;
+}
+
+.infografico .margembox{
 	margin:0 0 38px 0;
-}
-
-.linkdir, .linkesq{
-	display: block;
-	text-indent: -999999px;
-	width: 50%;
-	height: 316px;
-	position: absolute;
-	bottom: 0px;
-}
-
-.linkdir{
-	right: 0;
 }
 
 .idade caption{
@@ -459,30 +522,27 @@ section.margembox{
 
 .circular td.valor{
 	top: 0;
-	color: #FCAF17;
 	font-size: 2em;
 }
 
-.sexo td.valor{
-	color: #FF2626;
+.circular td.valor a{
+	color: #D04800;
+	text-decoration: none;
 }
 
-.circular tr:first-child td.valor{
-	color: #3C5C9A;
+.circular td.valor a:hover, .circular td.valor a:focus{
+	text-decoration: underline;
 }
 
-a.mas{
-	background-image: url(../imagens/icone-masculino.png);
-	background-repeat: no-repeat;
-	background-position: 26.943005181347% 160px;
-	background-size: 30px 62px;
+.circular tr:first-child td.valor a{
+	color: #415781;
 }
 
-a.fem{
-	background-image: url(../imagens/icone-feminino.png);
-	background-repeat: no-repeat;
-	background-position: 72.84465020576132% 160px;
-	background-size: 30px 62px;
+.boxsexo{
+	background-image: url(../imagens/icone-masculino.png), url(../imagens/icone-feminino.png);
+	background-repeat: no-repeat, no-repeat;
+	background-position: 14.943005181347% 160px, 84.84465020576132% 160px;
+	background-size: 30px 62px, 30px 62px;
 }
 
 .horizontal tbody, .horizontal tr, .horizontal caption{
@@ -532,19 +592,19 @@ a.fem{
 }
 
 #graficoproblema td.valor{
-	background-color: #FCAF17;
+	background-color: #D04800;
 }
 
 #graficoproblema tr{
-	border-left: 5px solid #FCAF17;
+	border-left: 5px solid #D04800;
 }
 
 #graficoassunto td.valor{
-	background-color: #3C5C9A;
+	background-color: #415781;
 }
 
 #graficoassunto tr{
-	border-left: 5px solid #3C5C9A;
+	border-left: 5px solid #415781;
 }
 
 canvas{
@@ -552,7 +612,7 @@ canvas{
 	margin: 90px auto 0 auto;
 }
 
-@media screen and (max-width:1199px) {
+@media screen and (max-width:1399px) {
 	.wrap{
 		width: 980px;
 	}
@@ -565,6 +625,14 @@ canvas{
 	.fundoheader h2{
 		background-position: 29% center;
 	}
+	.nota{
+		width: 980px;
+		margin: 0 0 0 -490px;
+		padding: 0 0 0 0;
+	}
+	.nota .valor{
+		padding: 28px 0 0 928px;
+	}
 	caption{
 		line-height: 115%;
 		font-size: 0.85em;
@@ -575,24 +643,28 @@ canvas{
 	.wrap{
 		width: 99%;
 	}
+	.nota{
+		width: 99%;
+		margin: 0 0 0 -49%;
+	}
+	.nota .valor{
+		padding: 28px 0 0 94%;
+	}
 	.horizontal td.valor{
 		font-size: 1.4em;
 	}
 }
 
 @media screen and (max-width:950px) {
-	.infografico section h3{
+	.boxpadrao h3{
 		font-size: 2em;
 		line-height: 28px;
 	}
 	.circular{
 		width: 96%;
 	}
-	a.mas{
-	    background-position: 21.943% 160px;
-	}
-	a.fem {
-	    background-position: 77.8447% 160px;
+	.boxsexo{
+		background-position: 9.943005181347% 160px, 89.84465020576132% 160px;
 	}
 	.horizontal td.valor{
 		font-size: 1.3em;
@@ -628,6 +700,9 @@ canvas{
 	.horizontal td.valor{
 		font-size: 1.1em;
 	}
+	h1{
+		font-size: 3.5em;
+	}
 }
 
 @media screen and (max-width:800px) {
@@ -639,19 +714,23 @@ canvas{
 	}
 	h1{
 		width: 100%;
+		height: 45px;
 		text-align: center;
 		padding: 20px 0;
+		margin: 0 0 95px 0;
 	}
-	h2.nota{
-		position: relative;
-		margin: 10px auto 15px auto;
+	.nota{
 		text-align: center;
-		height: 95px
+		width: 390px;
+		height: 95px;
+		top: 72px;
+		left: 50%;
+		margin: 0 0 0 -195px;
 	}
-	h2.nota span.valor{
+	.nota .valor{
 		padding: 25px 0 0 338px;
 	}
-	h2.nota span.media{
+	.nota .media{
 		width: 100%;
 	}
 	.fundoheader h2 {
@@ -666,11 +745,29 @@ canvas{
 	caption{
 		width: 100%;
 	}
-	a.mas{
-	    background-position: 11.943% 160px;
+	.boxsexo{
+		background-position: 6.943005181347% 160px, 93.84465020576132% 160px;
 	}
-	a.fem {
-	    background-position: 87.8447% 160px;
+}
+
+@media screen and (max-width: 700px) and (min-width: 601px){
+	.boxpadrao h3{
+		font-size: 1.7em;
+	}
+	.circular caption{
+		font-size: 0.8em;
+	}
+	.circular tr{
+		height: 40px;
+	}
+	.circular td.variavel{
+		font-size: 0.8em;
+	}
+	.circular td.valor{
+		font-size: 1.4em;
+	}
+	.boxsexo{
+		background: none;
 	}
 }
 
@@ -687,6 +784,9 @@ canvas{
 		height: 40px;
 		position: absolute;
 		left: 5px;
+	}
+	header a.ajuda{
+		margin: 10px 0 0 0;
 	}
 	.buscainterna{
 		display: none;
@@ -717,15 +817,17 @@ canvas{
 		position: absolute;
 		z-index: 1;
 		right: 30px;
-		top: 0;
+		top: 10px;
 		background-image: url(../imagens/icone-busca.png);
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: 24px 24px;
+		cursor: pointer;
 	}
 	h1{
 		font-size: 3em;
 		padding: 15px 0;
+		margin: 0 0 105px 0;
 	}
 	h1 small{
 		display: block;
@@ -741,6 +843,12 @@ canvas{
 		height: 50px;
 		line-height: 50px;
 	}
+	.fundoheader h2 span{
+		display: none;
+	}
+	.nota{
+		/*top: -200px;*/
+	}
 	.divisao:after{
 		width: 100%;
 	}
@@ -748,33 +856,27 @@ canvas{
 		bottom: -12px;
 	}
 	.filtros li{
-		font-size: 1.8em;
+		
+	}
+	.filtros li a{
+		text-align: center;
+		display: block;
+		font-size: 0.9em;
 		position: relative;
-		line-height: 250%;
 		padding: 0 0 0 0;
 		text-align: left;
 		width: 94%;
-	}
-	.filtros li a{
-		display: block;
-		position: absolute;
-		top: 50%;
-		right: 0;
-		width: 22px;
-		height: 22px;
-		padding: 10px 0 10px 10px;
-		margin: -22px 0 0 0;
-		text-indent: -9999px;
 		background-image: url(../imagens/icone-excluir-cel.png);
 		background-position: right center;
 		background-size: 22px 22px;
+		margin: 0 auto;
 	}
-	.infografico section{
+	.infografico .boxpadrao{
 	    border-bottom: none;
 	    margin:0 0 38px 0;
 	    height: auto;
 	}
-	.infografico section h3{
+	.boxpadrao h3{
 		font-size: 2.8em;
 		margin: 0 0 30px 0;
 	}
@@ -800,14 +902,8 @@ canvas{
 	.idade caption {
 		width: auto;
 	}
-	.linkdir, .linkesq{
-		height: 305px;
-	}
-	a.mas{
-		background-position: 26.943% 81px;
-	}
-	a.fem{
-		background-position: 72.8447% 81px;
+	.boxsexo{
+		background-position: 13.943005181347% 160px, 85.84465020576132% 160px;
 	}
 	.horizontal td.valor{
 		font-weight: bold;
@@ -826,19 +922,22 @@ canvas{
 }
 
 @media screen and (max-width: 390px){
-	h2.nota{
+	.nota{
 		width: 320px;
+		left: 50%;
+		/*top: -190px;*/
+		margin: 0 0 0 -160px;
 		background-size: auto 43px;
 		height: 80px;
 	}
-	h2.nota span.valor{
+	.nota .valor{
 		padding: 17px 0 0 277px;
 		height: 43px;
 		font-size: 2.3em;
 	}
 }
 
-@media screen and (-webkit-min-device-pixel-ratio : 1.5), screen and (min-device-pixel-ratio : 1.5) {
+/*@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
 	header a.logo{
 		background-image: url(../imagens/logo-principal-menor@2x.png);
 	}
@@ -848,29 +947,26 @@ canvas{
 	header a.ajuda{
 		background-image: url(../imagens/icone-ajuda-mob@2x.png);
 	}
-	h2.a{
+	.a{
 		background-image: url(../imagens/fundo-nota-a@2x.jpg);
 	}
-	h2.b{
+	.b{
 		background-image: url(../imagens/fundo-nota-b@2x.jpg);
 	}
-	h2.c{
+	.c{
 		background-image: url(../imagens/fundo-nota-c@2x.jpg);
 	}
-	h2.d{
+	.d{
 		background-image: url(../imagens/fundo-nota-d@2x.jpg);
 	}
-	h2.e{
+	.e{
 		background-image: url(../imagens/fundo-nota-e@2x.jpg);	
 	}
 	.idade tr td:first-child{
 		background-image: url(../imagens/fundo-grafico-vertical@2x.png); 
 	}
-	a.mas{
-		background-image: url(../imagens/icone-masculino@2x.png);
-	}
-	a.fem{
-		background-image: url(../imagens/icone-feminino@2x.png);
+	.boxsexo{
+		background-image: url(../imagens/icone-masculino.png), url(../imagens/icone-feminino.png);
 	}
 	.horizontal tr td:first-child{
 		background-image: url(../imagens/fundo-grafico-horizontal@2x.png);
@@ -881,4 +977,4 @@ canvas{
 	.filtros a{
 		background-image: url(../imagens/icone-excluir@2x.png);
 	}
-}
+}*/

@@ -1,0 +1,1 @@
+Os Scripts da página Reclamações Procon servem simplesmente para gerar os gráficos de forma visual, além de, servirem como código de rastreio para relatórios de visitação e adaptações de funcionalidades para os navegadores mais antigos. Mesmo sem a correta visualização dos gráficos, todas as informações estão presentes em forma textual pura, sem necessidade de scripts ou estilos.

@@ -1,7 +1,7 @@
 <?php
 include "conexao-banco.php";
 $conexao = conectarBanco();
-	$emp = str_replace("-", " ", strtolower($_GET['empresa']));
+	$emp = str_replace("-", " ", strtolower(@$_GET['empresa']));
 	$resultado = mysql_query("SELECT COUNT(DISTINCT strNomeFantasia) qtde_registros FROM dados_importados
 							where lower(replace(strNomeFantasia, ',', '')) LIKE '%" . $emp . "%'", $conexao);
 	while ($linha = mysql_fetch_assoc($resultado))
@@ -29,11 +29,19 @@ $conexao = conectarBanco();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
 	<meta property="og:image" content="imagens/logo-reclamacoes-procon-facebook.png">
 	<link rel="stylesheet" href="<?php echo $raiz; ?>css/layout-inicio.css">
-	<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/html5.js"></script><![endif]-->
+	<link href="http://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/html5.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
 	<script src="<?php echo $raiz; ?>js/jquery.js"></script>
-	<!--[if lt IE 9]><script type="text/javascript" src="<?php echo $raiz; ?>js/mediaqueries-min.js"></script><![endif]-->
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="<?php echo $raiz; ?>js/mediaqueries-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
+	<![endif]-->
 	<script src="<?php echo $raiz; ?>js/ios-bug-min.js"></script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-16951438-4']);
@@ -44,21 +52,30 @@ $conexao = conectarBanco();
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	</script>
+	<noscript><link type="text/plain" rel="author" href="funcoes-scripts.txt"></noscript>
 </head>
-<body class="resultados">
-	<header>
+<body>
+	<header class="margem" role="banner">
 		<div class="wrap">
-			<h1><a href="/">Reclamações Procon</a></h1>
-			<a href="/ajuda-sobre-conteudo.php" class="ajuda">Ajuda sobre o conteúdo</a>
+			<nav role="navigation">
+				<ul>
+					<li><a href="#conteudo" class="salto" accesskey="1">Saltar para o conteúdo [1]</a></li>
+					<li><a href="/" class="logo" accesskey="2">Voltar à página inicial [2]</a></li>
+					<li><a href="/ajuda-sobre-conteudo.php" class="ajuda" accesskey="3">Ajuda sobre o conteúdo [3]</a></li>
+				</ul>
+			</nav>
+			<h1>Reclamações Procon</h1>
 		</div>
 	</header>
-	<form action="<?php echo $raiz; ?>" class="wrap">
-		<label for="busca">Pesquise o nome da empresa</label>
-		<input type="text" name="pesquisa" id="busca" placeholder="PESQUISE O NOME DA EMPRESA" autocomplete="off" required>
-		<button type="submit">BUSCAR</button>
+	<form action="<?php echo $raiz; ?>" class="wrap" role="search" method="get">
+		<div>
+			<label for="pesquisa">Pesquise o nome da empresa</label>
+			<input type="text" name="pesquisa" id="pesquisa" accesskey="4" required>
+			<button type="submit">BUSCAR</button>
+		</div>
 	</form>
-	<div class="conteudo">
-		<ol>
+	<div class="conteudo" role="main">
+		<ol class="resultados">
 			<?php
 				if(mysql_num_rows($resultado) <= 0)
 					header("location:pagina-nao-encontrada.php");
@@ -108,9 +125,13 @@ $conexao = conectarBanco();
 					$empresa = str_replace("--", "-", str_replace("---", "-", $empresa));
 					if($qtde_registros == 1)
 						header("location: /". $url . $empresa);
-
+					if($i == 1){
+						$conteudo = "id='conteudo'";
+					}else{
+						$conteudo = "";
+					}
 					echo "<li " . (($i == mysql_num_rows($resultado)) ? "class='semborda'" : "") . ">
-							<a href='" . $raiz . strtolower($empresa) . "'>
+							<a ".$conteudo." href='" . $raiz . strtolower($empresa) . "'>
 								<h2>" . ucwords(utf8_encode($strNomeFantasia)) . "</h2>
 								<p class='reclamacoes'>" . $linha['qtde_reclamacoes'] . ($linha['qtde_reclamacoes'] == "1" ? " reclamação" : " reclamações") . "</p>
 								<p>" . utf8_encode($linha['DescCNAEPrincipal']) . "</p>
@@ -141,8 +162,10 @@ $conexao = conectarBanco();
 			if($pagina < (int)($qtde_registros / 10))
 				echo "<li class='proxima'><a href='" . "http://" . $_SERVER['HTTP_HOST'] . 
 						(!isset($_GET['pagina']) ? (rtrim($_SERVER['REQUEST_URI'], "/") . "/2") : str_replace($pagina, $pagina + 1, $_SERVER['REQUEST_URI'])) . 
-					"'>Próxima <span> Página</span></a></li></ul>";
+					"'>Próxima <span> Página</span></a></li>";
+			echo '</ul>';
 		?>
+		<a class="voltartopo" href="#" accesskey="0">Voltar ao topo [0]</a>
 	</div>
 </body>
 </html>

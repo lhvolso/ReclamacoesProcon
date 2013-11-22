@@ -42,38 +42,84 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+caption{
+	display: block;
+	text-indent: -9999px;
+}
 /**************************************/
 
 body{
 	font-family: "Maven Pro", sans-serif;
-	font-size: 10px;
+	font-size: 0.625em;
+}
+
+.salto, .voltartopo{
+	display: block;
+	width: 250px;
+	text-align: center;
+	text-indent: -9999px;
+}
+
+.salto{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 99;
+	margin: 0 0 0 -125px;
+	border-radius: 0 0 5px 5px;
+}
+
+.voltartopo{
+	clear: both;
+	height: 25px;
+	line-height: 25px;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+.salto:focus, .voltartopo:focus{
+	text-indent: 0px;
+	font-size: 1.8em;
+	background-color: #415781;
+	text-decoration: none;
+	color: #FFF;
+	padding: 3px 0;
+	border: 1px solid #CCC;
 }
 
 header{
 	background-image: url(../imagens/fundo-topo.jpg);
 	background-repeat: repeat-x;
 	background-position: 0 0;
-	padding: 0 0 40px 0;
+	padding: 0 0 70px 0;
 }
 
-.resultados header{
-	padding: 0 0 50px 0;	
+header.margem{
+	padding: 0 0 95px 0;	
 }
 
-header h1, header a.logo{
+h1{
+	text-indent: -9999px;
+	height: 5px;
+}
+
+.logo{
 	display: block;
 	background-image: url(../imagens/logo-principal.png);
 	background-repeat: no-repeat;
 	background-position: 0 5px;
 	background-size: 384px 86px;
+	width: 384px;
 	height: 96px;
 	text-indent: -9999px;
 }
 
-h1 a{
+a.logo{
 	display: block;
-	width: 384px;
-	height: 96px;
+}
+
+a.logo:focus{
+	box-shadow: 0 0 10px 4px #415781;
 }
 
 header p{
@@ -81,9 +127,9 @@ header p{
 	margin: 0 auto;
 	text-align: center;
 	font-size: 2em;
-	color: #777777;
+	color: #636161;
 	line-height: 120%;
-	padding: 30px 0;
+	padding: 20px 0 30px 0;
 }
 
 header a.ajuda{
@@ -100,6 +146,10 @@ header a.ajuda{
 	text-indent: -9999px;
 }
 
+header a.ajuda:focus{
+	box-shadow: 0 0 10px 4px #415781;
+}
+
 .wrap{
 	width: 1200px;
 	margin: 0 auto;
@@ -108,15 +158,17 @@ header a.ajuda{
 
 form.wrap{
 	width: 1180px;
-	border: 10px solid #FFF;
 	border-radius: 10px;
-	margin: -40px auto 0 auto;
+	margin: -73px auto 0 auto;
 }
 
 label{
 	display: block;
-	text-indent: -9999px;
-	height: 0;
+	text-align: center;
+	font-size: 3em;
+	color: #636161;
+	line-height: 120%;
+	padding: 0 0 5px 0;
 }
 
 input{
@@ -140,13 +192,17 @@ button{
 	margin: -56px 6px 0 0;
 	height: 50px;
 	border: none;
-	background: #FBB100;
+	background: #D04800;
 	color: #FFF;
 	font-size: 2.4em;
 	border-radius: 7px;
 	padding: 0 15px;
 	position: relative;
 	z-index: 2;
+}
+
+button:focus{
+	box-shadow: 0 0 10px 4px #415781;
 }
 
 .conteudo{
@@ -158,13 +214,13 @@ button{
 
 h2{
 	font-size: 3em;
-	color: #FBB100;
+	color: #D04800;
 	margin: 0 0 20px 0;
 }
 
 h3{
 	font-size: 2em;
-	color: #FBB100;
+	color: #D04800;
 	margin: 20px 0;
 }
 
@@ -181,7 +237,7 @@ section:first-child{
 section p{
 	font-size: 1.8em;
 	line-height: 140%;
-	color: #777777;
+	color: #636161;
 	margin: 0 0 15px 0;
 }
 
@@ -190,7 +246,11 @@ section p strong{
 }
 
 section p a{
-	color: #3C5C9A;
+	color: #415781;
+}
+
+section p a:focus{
+	color: #D04800;
 }
 
 footer{
@@ -215,10 +275,14 @@ ol a{
 	text-decoration: none;
 }
 
+ol a:focus h2{
+	color: #D04800;
+}
+
 ol li a:hover:after, ol li a:focus:after{
 	content: '»';
 	font-size: 5em;
-	color: #3C5C9A;
+	color: #415781;
 	position: absolute;
 	right: 0;
 	top: 14px;
@@ -226,7 +290,7 @@ ol li a:hover:after, ol li a:focus:after{
 
 ol h2{
 	font-size: 4em;
-	color: #3C5C9A;
+	color: #415781;
 	margin: 0 0 7px 0;
 }
 
@@ -240,19 +304,19 @@ ol h2.naoencontrado strong{
 	font-style: italic;
 	line-height: 120%;
 	font-size: 1.4em;
-	color: #3C5C9A;
+	color: #415781;
 }
 
 ol p{
 	font-size: 1.8em;
-	color: #777777;
+	color: #636161;
 	line-height: 120%;
 }
 
 ol p.reclamacoes{
 	position: absolute;
 	top: 0;
-	color: #3C5C9A;
+	color: #415781;
 }
 
 .paginacao{
@@ -267,7 +331,7 @@ ol p.reclamacoes{
 .paginacao a{
 	display: block;
 	font-size: 2.4em;
-	color: #3C5C9A;
+	color: #415781;
 	text-decoration: none;
 	width: 38px;
 	height: 38px;
@@ -299,12 +363,12 @@ ol p.reclamacoes{
 
 .paginacao a:hover, .paginacao a:focus{
 	color: #FFF;
-	background-color: #3C5C9A;
+	background-color: #415781;
 }
 
 .paginacao a.ativo{
 	color: #FFF;
-	background-color: #3C5C9A;
+	background-color: #415781;
 }
 
 .textocentro{
@@ -325,9 +389,11 @@ article.ajuda section{
 article.ajuda h1{
 	background: none;
 	font-size: 4.5em;
-	color: #8DC63F;
+	color: #2B8376;
 	text-align: center;
 	margin: 0 0 25px 0;
+	height: auto;
+	text-indent: 0;
 }
 
 article.ajuda nav{
@@ -339,10 +405,14 @@ article.ajuda nav a{
 	color: #39599E;
 }
 
+article.ajuda nav a:focus{
+	color: #D04800;
+}
+
 article.ajuda th, article.ajuda td, article.ajuda li{
 	font-size: 1.8em;
 	line-height: 140%;
-	color: #777777;
+	color: #636161;
 	margin: 0 0 15px 0;
 	text-align: left;
 }
@@ -379,7 +449,7 @@ article.ajuda li:before{
 	content: '- ';
 }
 
-@media screen and (max-width:1199px) {
+@media screen and (max-width:1399px) {
 	.wrap{
 		width: 980px;
 	}
@@ -439,19 +509,15 @@ article.ajuda li:before{
 
 	header{
 		background-position: 0 -26px;
-		padding: 0 0 40px 0;
+		padding: 0 0 60px 0;
 	}
 
-	header h1{
+
+	.logo{
 		width: 233px;
 		height: 70px;
 		background-position: center center;
 		background-size: 223px 50px;
-	}
-
-	h1 a{
-		width: 233px;
-		height: 70px;
 	}
 
 	header a.ajuda{
@@ -460,9 +526,19 @@ article.ajuda li:before{
 	}
 
 	header p{
-		width: 100%;
-		font-size: 1.8em;
+		width: 96%;
+		font-size: 1.7em;
 		padding: 10px 0;
+	}
+
+	form.wrap{
+		margin: -73px auto 0 auto;
+	}
+
+	label{
+		font-size: 2em;
+		padding: 20px 0 7px 0;
+		font-weight: 700;
 	}
 
 	input{
@@ -498,13 +574,13 @@ article.ajuda li:before{
 
 	ol h2{
 		font-size: 3em;
-		color: #3C5C9A;
+		color: #415781;
 		margin: 0 0 7px 0;
 	}
 
 	ol p{
 		font-size: 1.6em;
-		color: #777777;
+		color: #636161;
 	}
 
 	ol li{
@@ -541,24 +617,15 @@ article.ajuda li:before{
 		height: auto;
 		font-size: 3.6em;
 	}
-}
 
-@media screen and (-webkit-min-device-pixel-ratio : 1.5), (min-device-pixel-ratio : 1.5) {
-	header a.ajuda{
-		background-image: url(../imagens/fundo-ajuda@2x.png);
-	}
-	header h1{
-		background-image: url(../imagens/logo-principal@2x.png);
-	}
-	button{
-		background-image: url(../imagens/fundo-botao-busca@2x.png);
-	}
-	.paginacao li.anterior a{
-		background-image: url(../imagens/paginacao-anterior@2x.png);
-	}
-
-	.paginacao li.proxima a{
-		background-image: url(../imagens/paginacao-proxima@2x.png);
+	.voltartopox{
+		text-indent: 0px;
+		font-size: 1.8em;
+		background-color: #415781;
+		text-decoration: none;
+		color: #FFF;
+		padding: 3px 0;
+		border: 1px solid #CCC;
 	}
 }
 
@@ -574,3 +641,22 @@ article.ajuda li:before{
 		background-image: none;
 	}	
 }
+
+/*@media screen and (-webkit-min-device-pixel-ratio : 1.5), (min-device-pixel-ratio : 1.5) {
+	header a.ajuda{
+		background-image: url(../imagens/fundo-ajuda@2x.png);
+	}
+	.logo{
+		background-image: url(../imagens/logo-principal@2x.png);
+	}
+	button{
+		background-image: url(../imagens/fundo-botao-busca@2x.png);
+	}
+	.paginacao li.anterior a{
+		background-image: url(../imagens/paginacao-anterior@2x.png);
+	}
+
+	.paginacao li.proxima a{
+		background-image: url(../imagens/paginacao-proxima@2x.png);
+	}
+}*/
